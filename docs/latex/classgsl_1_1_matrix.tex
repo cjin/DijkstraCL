@@ -1,0 +1,306 @@
+\hypertarget{classgsl_1_1_matrix}{\section{gsl\+:\+:Matrix Class Reference}
+\label{classgsl_1_1_matrix}\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+}
+
+
+A simple wrapper class for common matrix operations and resource management for G\+N\+U Scientific Library.  
+
+
+
+
+{\ttfamily \#include $<$Matrix.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgsl_1_1_matrix_a356b049336e124fa680bec4d6f413b0a}{Matrix} ()
+\item 
+\hyperlink{classgsl_1_1_matrix_a9b4fca307f0738b821a75a36ad88fd1b}{Matrix} (\hyperlink{typedefs_8h_a5d7deb06d9443e7d4a47bf078638cc91}{Index} \hyperlink{classgsl_1_1_matrix_a459c986967f558d242020a7d6c5feb0b}{rows}, \hyperlink{typedefs_8h_a5d7deb06d9443e7d4a47bf078638cc91}{Index} \hyperlink{classgsl_1_1_matrix_a19034005cec347cd9e3879c06f59b4eb}{cols})
+\item 
+\hyperlink{classgsl_1_1_matrix_a32251de3e652c6099966d588175018c8}{Matrix} (\hyperlink{typedefs_8h_a5d7deb06d9443e7d4a47bf078638cc91}{Index} \hyperlink{classgsl_1_1_matrix_a459c986967f558d242020a7d6c5feb0b}{rows}, \hyperlink{typedefs_8h_a5d7deb06d9443e7d4a47bf078638cc91}{Index} \hyperlink{classgsl_1_1_matrix_a19034005cec347cd9e3879c06f59b4eb}{cols}, \hyperlink{typedefs_8h_a508fc58b5dc3c81865305f6498457063}{Scalar} initial\+Value)
+\item 
+\hyperlink{classgsl_1_1_matrix_aa0d577050c24af22cabee26a13d16e8c}{Matrix} (const \hyperlink{classgsl_1_1_matrix}{Matrix} \&other)
+\item 
+\hyperlink{classgsl_1_1_matrix_ab9e524d34343fd4f2319461d9a34008d}{$\sim$\+Matrix} ()
+\item 
+const \hyperlink{typedefs_8h_a508fc58b5dc3c81865305f6498457063}{Scalar} \& \hyperlink{classgsl_1_1_matrix_a06ef292d80279226aa374bef62b43dac}{operator()} (\hyperlink{typedefs_8h_a5d7deb06d9443e7d4a47bf078638cc91}{Index} row, \hyperlink{typedefs_8h_a5d7deb06d9443e7d4a47bf078638cc91}{Index} col) const 
+\item 
+\hyperlink{typedefs_8h_a508fc58b5dc3c81865305f6498457063}{Scalar} \& \hyperlink{classgsl_1_1_matrix_a7bcbc84fed0a2562dfe054117d700ab3}{operator()} (\hyperlink{typedefs_8h_a5d7deb06d9443e7d4a47bf078638cc91}{Index} row, \hyperlink{typedefs_8h_a5d7deb06d9443e7d4a47bf078638cc91}{Index} col)
+\item 
+\hyperlink{typedefs_8h_a508fc58b5dc3c81865305f6498457063}{Scalar} \hyperlink{classgsl_1_1_matrix_a297617ec0562e5f0a74acd0c07a3b6aa}{Get} (\hyperlink{typedefs_8h_a5d7deb06d9443e7d4a47bf078638cc91}{Index} row, \hyperlink{typedefs_8h_a5d7deb06d9443e7d4a47bf078638cc91}{Index} col) const 
+\item 
+void \hyperlink{classgsl_1_1_matrix_acf6d1790e1400d0550a29edcae9b06a7}{Set} (\hyperlink{typedefs_8h_a5d7deb06d9443e7d4a47bf078638cc91}{Index} row, \hyperlink{typedefs_8h_a5d7deb06d9443e7d4a47bf078638cc91}{Index} col, \hyperlink{typedefs_8h_a508fc58b5dc3c81865305f6498457063}{Scalar} val)
+\item 
+void \hyperlink{classgsl_1_1_matrix_ab74d4d03d784fc835ff31be3a90f6b75}{Set\+All} (\hyperlink{typedefs_8h_a508fc58b5dc3c81865305f6498457063}{Scalar} scalar)
+\item 
+void \hyperlink{classgsl_1_1_matrix_aa8736a0de07b25698e8c1d501cbce00a}{Set\+Zero} ()
+\item 
+void \hyperlink{classgsl_1_1_matrix_ad92a4b03c7d5b2e348ee72b54737165c}{Set\+Identity} ()
+\item 
+\hyperlink{typedefs_8h_a5d7deb06d9443e7d4a47bf078638cc91}{Index} \hyperlink{classgsl_1_1_matrix_a459c986967f558d242020a7d6c5feb0b}{rows} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of rows of the matrix. \end{DoxyCompactList}\item 
+\hyperlink{typedefs_8h_a5d7deb06d9443e7d4a47bf078638cc91}{Index} \hyperlink{classgsl_1_1_matrix_a19034005cec347cd9e3879c06f59b4eb}{cols} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of columns of the matrix. \end{DoxyCompactList}\item 
+void \hyperlink{classgsl_1_1_matrix_adb9e90c5ed48a636505fb316f80edcea}{Copy} (const \hyperlink{classgsl_1_1_matrix}{Matrix} \&other)
+\item 
+const \hyperlink{classgsl_1_1_matrix}{Matrix} \& \hyperlink{classgsl_1_1_matrix_a27932a4c42807a3987979db7fa699023}{operator=} (const \hyperlink{classgsl_1_1_matrix}{Matrix} \&other)
+\item 
+void \hyperlink{classgsl_1_1_matrix_a96a76a573e0af24b18eac7177b13038c}{Resize} (\hyperlink{typedefs_8h_a5d7deb06d9443e7d4a47bf078638cc91}{Index} \hyperlink{classgsl_1_1_matrix_a459c986967f558d242020a7d6c5feb0b}{rows}, \hyperlink{typedefs_8h_a5d7deb06d9443e7d4a47bf078638cc91}{Index} \hyperlink{classgsl_1_1_matrix_a19034005cec347cd9e3879c06f59b4eb}{cols})
+\item 
+void \hyperlink{classgsl_1_1_matrix_a54cc5ce3952ab512617a1cf93a611f64}{Redimension} (\hyperlink{typedefs_8h_a5d7deb06d9443e7d4a47bf078638cc91}{Index} \hyperlink{classgsl_1_1_matrix_a459c986967f558d242020a7d6c5feb0b}{rows}, \hyperlink{typedefs_8h_a5d7deb06d9443e7d4a47bf078638cc91}{Index} \hyperlink{classgsl_1_1_matrix_a19034005cec347cd9e3879c06f59b4eb}{cols})
+\item 
+bool \hyperlink{classgsl_1_1_matrix_ab51de3558c8bbaed7939714c8131d0ee}{operator==} (const \hyperlink{classgsl_1_1_matrix}{Matrix} \&other) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+gsl\+\_\+matrix $\ast$ \hyperlink{classgsl_1_1_matrix_ac9b224f97485473b3e7f0b0b70859db4}{m\+\_\+}
+\begin{DoxyCompactList}\small\item\em Plain pointer for actual G\+S\+L matrix type; use with caution. \end{DoxyCompactList}\item 
+\hyperlink{typedefs_8h_a508fc58b5dc3c81865305f6498457063}{Scalar} \hyperlink{classgsl_1_1_matrix_af396387bb6247e141133479ac9808630}{equality\+\_\+limit\+\_\+} = 1e-\/12
+\begin{DoxyCompactList}\small\item\em Floating point equality precision; difference less than this value is considered no difference. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple wrapper class for common matrix operations and resource management for G\+N\+U Scientific Library. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classgsl_1_1_matrix_a356b049336e124fa680bec4d6f413b0a}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{Matrix}]{\setlength{\rightskip}{0pt plus 5cm}gsl\+::\+Matrix\+::\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classgsl_1_1_matrix_a356b049336e124fa680bec4d6f413b0a}
+Default constructor. No G\+S\+L matrix will be allocated; the plain pointer to the matrix is set to N\+U\+L\+L. \hypertarget{classgsl_1_1_matrix_a9b4fca307f0738b821a75a36ad88fd1b}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{Matrix}]{\setlength{\rightskip}{0pt plus 5cm}gsl\+::\+Matrix\+::\+Matrix (
+\begin{DoxyParamCaption}
+\item[{{\bf Index}}]{rows, }
+\item[{{\bf Index}}]{cols}
+\end{DoxyParamCaption}
+)}}\label{classgsl_1_1_matrix_a9b4fca307f0738b821a75a36ad88fd1b}
+Uninitialized Constructor. Construct a matrix with specified size and uninitialized elements. 
+\begin{DoxyParams}{Parameters}
+{\em rows} & number of rows of the matrix. \\
+\hline
+{\em cols} & number of columns of the matrix. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classgsl_1_1_matrix_a32251de3e652c6099966d588175018c8}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{Matrix}]{\setlength{\rightskip}{0pt plus 5cm}gsl\+::\+Matrix\+::\+Matrix (
+\begin{DoxyParamCaption}
+\item[{{\bf Index}}]{rows, }
+\item[{{\bf Index}}]{cols, }
+\item[{{\bf Scalar}}]{initial\+Value}
+\end{DoxyParamCaption}
+)}}\label{classgsl_1_1_matrix_a32251de3e652c6099966d588175018c8}
+Constructor with Initialization. Construct a matrix with specified size and initialize elements with the specified value. 
+\begin{DoxyParams}{Parameters}
+{\em rows} & number of rows of the matrix. \\
+\hline
+{\em cols} & number of columns of the matrix. \\
+\hline
+{\em initial\+Value} & the value to be initialized with. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classgsl_1_1_matrix_aa0d577050c24af22cabee26a13d16e8c}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{Matrix}]{\setlength{\rightskip}{0pt plus 5cm}gsl\+::\+Matrix\+::\+Matrix (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classgsl_1_1_matrix_aa0d577050c24af22cabee26a13d16e8c}
+Copy Constructor. Construct a matrix with an existing matrix. The old matrix will be copied. \hypertarget{classgsl_1_1_matrix_ab9e524d34343fd4f2319461d9a34008d}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!````~Matrix@{$\sim$\+Matrix}}
+\index{````~Matrix@{$\sim$\+Matrix}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{$\sim$\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}gsl\+::\+Matrix\+::$\sim$\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classgsl_1_1_matrix_ab9e524d34343fd4f2319461d9a34008d}
+Destructor. The destructor will release the memory of the matrix. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classgsl_1_1_matrix_a19034005cec347cd9e3879c06f59b4eb}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!cols@{cols}}
+\index{cols@{cols}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{cols}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Index} gsl\+::\+Matrix\+::cols (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classgsl_1_1_matrix_a19034005cec347cd9e3879c06f59b4eb}
+
+
+Get the number of columns of the matrix. 
+
+\hypertarget{classgsl_1_1_matrix_adb9e90c5ed48a636505fb316f80edcea}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!Copy@{Copy}}
+\index{Copy@{Copy}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{Copy}]{\setlength{\rightskip}{0pt plus 5cm}void gsl\+::\+Matrix\+::\+Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classgsl_1_1_matrix_adb9e90c5ed48a636505fb316f80edcea}
+Copy the new matrix to the current matrix. The old matrix will be released. This function will be called by the copy constructor and operator=. 
+\begin{DoxyParams}{Parameters}
+{\em other} & the new matrix to be copied. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classgsl_1_1_matrix_a297617ec0562e5f0a74acd0c07a3b6aa}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!Get@{Get}}
+\index{Get@{Get}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Scalar} gsl\+::\+Matrix\+::\+Get (
+\begin{DoxyParamCaption}
+\item[{{\bf Index}}]{row, }
+\item[{{\bf Index}}]{col}
+\end{DoxyParamCaption}
+) const}}\label{classgsl_1_1_matrix_a297617ec0562e5f0a74acd0c07a3b6aa}
+Const Element Getter. This is the named accessor which has the same effect of the const version of operator(). 
+\begin{DoxyParams}{Parameters}
+{\em row} & the row index of the element. \\
+\hline
+{\em col} & the column index of the element. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classgsl_1_1_matrix_a06ef292d80279226aa374bef62b43dac}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!operator()@{operator()}}
+\index{operator()@{operator()}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Scalar} \& gsl\+::\+Matrix\+::operator() (
+\begin{DoxyParamCaption}
+\item[{{\bf Index}}]{row, }
+\item[{{\bf Index}}]{col}
+\end{DoxyParamCaption}
+) const}}\label{classgsl_1_1_matrix_a06ef292d80279226aa374bef62b43dac}
+Const Element Accessor. Access one element of the const matrix. 
+\begin{DoxyParams}{Parameters}
+{\em row} & the row index of the element. \\
+\hline
+{\em col} & the column index of the element. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classgsl_1_1_matrix_a7bcbc84fed0a2562dfe054117d700ab3}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!operator()@{operator()}}
+\index{operator()@{operator()}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Scalar} \& gsl\+::\+Matrix\+::operator() (
+\begin{DoxyParamCaption}
+\item[{{\bf Index}}]{row, }
+\item[{{\bf Index}}]{col}
+\end{DoxyParamCaption}
+)}}\label{classgsl_1_1_matrix_a7bcbc84fed0a2562dfe054117d700ab3}
+Element Accessor. Access one element reference of the matrix. This can be the lvalue reference. 
+\begin{DoxyParams}{Parameters}
+{\em row} & the row index of the element. \\
+\hline
+{\em col} & the column index of the element. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classgsl_1_1_matrix_a27932a4c42807a3987979db7fa699023}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!operator=@{operator=}}
+\index{operator=@{operator=}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Matrix} \& gsl\+::\+Matrix\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classgsl_1_1_matrix_a27932a4c42807a3987979db7fa699023}
+Assignment operator. Copy the other matrix to this matrix. \hypertarget{classgsl_1_1_matrix_ab51de3558c8bbaed7939714c8131d0ee}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!operator==@{operator==}}
+\index{operator==@{operator==}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool gsl\+::\+Matrix\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix} \&}]{other}
+\end{DoxyParamCaption}
+) const}}\label{classgsl_1_1_matrix_ab51de3558c8bbaed7939714c8131d0ee}
+Equality operator. Check the equality of the matrix by checking all corresponding elements. equality\+\_\+limit will be used as the precision of the equality. \hypertarget{classgsl_1_1_matrix_a54cc5ce3952ab512617a1cf93a611f64}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!Redimension@{Redimension}}
+\index{Redimension@{Redimension}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{Redimension}]{\setlength{\rightskip}{0pt plus 5cm}void gsl\+::\+Matrix\+::\+Redimension (
+\begin{DoxyParamCaption}
+\item[{{\bf Index}}]{rows, }
+\item[{{\bf Index}}]{cols}
+\end{DoxyParamCaption}
+)}}\label{classgsl_1_1_matrix_a54cc5ce3952ab512617a1cf93a611f64}
+Redimension the matrix. This function has the same effect of Resize except for that the old elements of the matrix are not preserved. The new matrix will be uninitialized. 
+\begin{DoxyParams}{Parameters}
+{\em rows} & number of rows of the new matrix. \\
+\hline
+{\em cols} & number of columns of the new matrix. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classgsl_1_1_matrix_a96a76a573e0af24b18eac7177b13038c}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!Resize@{Resize}}
+\index{Resize@{Resize}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{Resize}]{\setlength{\rightskip}{0pt plus 5cm}void gsl\+::\+Matrix\+::\+Resize (
+\begin{DoxyParamCaption}
+\item[{{\bf Index}}]{rows, }
+\item[{{\bf Index}}]{cols}
+\end{DoxyParamCaption}
+)}}\label{classgsl_1_1_matrix_a96a76a573e0af24b18eac7177b13038c}
+Resize the matrix. The matrix will be resized and the element values are preserved as much as possible. A new matrix will be allocated and elements will be copied. The old matrix will be released. \hypertarget{classgsl_1_1_matrix_a459c986967f558d242020a7d6c5feb0b}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!rows@{rows}}
+\index{rows@{rows}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{rows}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Index} gsl\+::\+Matrix\+::rows (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classgsl_1_1_matrix_a459c986967f558d242020a7d6c5feb0b}
+
+
+Get the number of rows of the matrix. 
+
+\hypertarget{classgsl_1_1_matrix_acf6d1790e1400d0550a29edcae9b06a7}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!Set@{Set}}
+\index{Set@{Set}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}void gsl\+::\+Matrix\+::\+Set (
+\begin{DoxyParamCaption}
+\item[{{\bf Index}}]{row, }
+\item[{{\bf Index}}]{col, }
+\item[{{\bf Scalar}}]{val}
+\end{DoxyParamCaption}
+)}}\label{classgsl_1_1_matrix_acf6d1790e1400d0550a29edcae9b06a7}
+Element Setter. Set one element reference of the matrix using the specified value. 
+\begin{DoxyParams}{Parameters}
+{\em row} & the row index of the element. \\
+\hline
+{\em col} & the column index of the element. \\
+\hline
+{\em val} & the new value of the element to be set. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classgsl_1_1_matrix_ab74d4d03d784fc835ff31be3a90f6b75}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!Set\+All@{Set\+All}}
+\index{Set\+All@{Set\+All}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{Set\+All}]{\setlength{\rightskip}{0pt plus 5cm}void gsl\+::\+Matrix\+::\+Set\+All (
+\begin{DoxyParamCaption}
+\item[{{\bf Scalar}}]{scalar}
+\end{DoxyParamCaption}
+)}}\label{classgsl_1_1_matrix_ab74d4d03d784fc835ff31be3a90f6b75}
+Element Setter. Set all the elements of the matrix to the new value. 
+\begin{DoxyParams}{Parameters}
+{\em scalar} & the new value of the elements of the matrix. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classgsl_1_1_matrix_ad92a4b03c7d5b2e348ee72b54737165c}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!Set\+Identity@{Set\+Identity}}
+\index{Set\+Identity@{Set\+Identity}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{Set\+Identity}]{\setlength{\rightskip}{0pt plus 5cm}void gsl\+::\+Matrix\+::\+Set\+Identity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classgsl_1_1_matrix_ad92a4b03c7d5b2e348ee72b54737165c}
+Element Setter. Set the matrix to be an identity matrix. It also works with non-\/square matrix in which case the diagonal elements are set to one and all other elements are set to zero. \hypertarget{classgsl_1_1_matrix_aa8736a0de07b25698e8c1d501cbce00a}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!Set\+Zero@{Set\+Zero}}
+\index{Set\+Zero@{Set\+Zero}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{Set\+Zero}]{\setlength{\rightskip}{0pt plus 5cm}void gsl\+::\+Matrix\+::\+Set\+Zero (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classgsl_1_1_matrix_aa8736a0de07b25698e8c1d501cbce00a}
+Element Setter. Set all the elements of the matrix to zero. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classgsl_1_1_matrix_af396387bb6247e141133479ac9808630}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!equality\+\_\+limit\+\_\+@{equality\+\_\+limit\+\_\+}}
+\index{equality\+\_\+limit\+\_\+@{equality\+\_\+limit\+\_\+}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{equality\+\_\+limit\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Scalar} gsl\+::\+Matrix\+::equality\+\_\+limit\+\_\+ = 1e-\/12}}\label{classgsl_1_1_matrix_af396387bb6247e141133479ac9808630}
+
+
+Floating point equality precision; difference less than this value is considered no difference. 
+
+\hypertarget{classgsl_1_1_matrix_ac9b224f97485473b3e7f0b0b70859db4}{\index{gsl\+::\+Matrix@{gsl\+::\+Matrix}!m\+\_\+@{m\+\_\+}}
+\index{m\+\_\+@{m\+\_\+}!gsl\+::\+Matrix@{gsl\+::\+Matrix}}
+\subsubsection[{m\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}gsl\+\_\+matrix$\ast$ gsl\+::\+Matrix\+::m\+\_\+}}\label{classgsl_1_1_matrix_ac9b224f97485473b3e7f0b0b70859db4}
+
+
+Plain pointer for actual G\+S\+L matrix type; use with caution. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_matrix_8h}{Matrix.\+h}\item 
+\hyperlink{_matrix_8cpp}{Matrix.\+cpp}\end{DoxyCompactItemize}

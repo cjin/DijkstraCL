@@ -1,0 +1,55 @@
+\hypertarget{_dijkstra_c_l_8h}{\section{Dijkstra\+C\+L.\+h File Reference}
+\label{_dijkstra_c_l_8h}\index{Dijkstra\+C\+L.\+h@{Dijkstra\+C\+L.\+h}}
+}
+{\ttfamily \#include \char`\"{}C\+L/cl.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include \char`\"{}Adjacency\+List.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Matrix.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_dijkstra_1_1_dijkstra_c_l}{Dijkstra\+::\+Dijkstra\+C\+L}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_dijkstra}{Dijkstra}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_dijkstra_c_l_8h_aabe3f1a8b97db4aececc6fd14cc0ae74}{check\+Error}()~check\+Error\+File\+Line(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+ , \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em check\+Error macro to incorporate the line of code with error for convenient debugging. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple wrapper class for the Open\+C\+L implementation of the Parallel \hyperlink{namespace_dijkstra}{Dijkstra} Algorithm for all-\/pair or selected-\/pair shortest distances calculation.
+
+This code is adapted from the example code (by Dan Ginsburg) for the book Open\+C\+L Programming Guide (by Munish, et al.) (\href{http://www.heterogeneouscompute.org/?page_id=5}{\tt http\+://www.\+heterogeneouscompute.\+org/?page\+\_\+id=5}) with some tweaks and one data reading synchronization bug fixed for large datasets and adding multiple source shortest distances support. Both of the code and the original code implements the parallel \hyperlink{namespace_dijkstra}{Dijkstra} Algorithm from the paper \char`\"{}\+Accelerating large graph algorithms on the G\+P\+U using C\+U\+D\+A\char`\"{} (by Harish and Narayanan).
+
+\begin{DoxyAuthor}{Author}
+Can 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2014-\/08-\/16 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+G\+N\+U Public License V3.\+0 
+\end{DoxyCopyright}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_dijkstra_c_l_8h_aabe3f1a8b97db4aececc6fd14cc0ae74}{\index{Dijkstra\+C\+L.\+h@{Dijkstra\+C\+L.\+h}!check\+Error@{check\+Error}}
+\index{check\+Error@{check\+Error}!Dijkstra\+C\+L.\+h@{Dijkstra\+C\+L.\+h}}
+\subsubsection[{check\+Error}]{\setlength{\rightskip}{0pt plus 5cm}\#define check\+Error(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~check\+Error\+File\+Line(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+ , \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)}}\label{_dijkstra_c_l_8h_aabe3f1a8b97db4aececc6fd14cc0ae74}
+
+
+check\+Error macro to incorporate the line of code with error for convenient debugging. 
+

@@ -1,0 +1,303 @@
+\hypertarget{class_dijkstra_1_1_dijkstra_c_l}{\section{Dijkstra\+:\+:Dijkstra\+C\+L Class Reference}
+\label{class_dijkstra_1_1_dijkstra_c_l}\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+}
+
+
+{\ttfamily \#include $<$Dijkstra\+C\+L.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \hyperlink{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{cl\+\_\+\+Index}
+\begin{DoxyCompactList}\small\item\em Size type for Open\+C\+L. Check the hardware for supported types. \end{DoxyCompactList}\item 
+typedef float \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a5dc96724577a49ee14d4c2e1df3c0579}{cl\+\_\+\+Scalar}
+\begin{DoxyCompactList}\small\item\em Value type for Open\+C\+L. Check the hardware for supported types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_dijkstra_1_1_dijkstra_c_l_a568bd4b94630d1add7a753b827b518e1}{Dijkstra\+C\+L} (std\+::shared\+\_\+ptr$<$ \hyperlink{struct_undirected_weighted_graph_1_1_graph_array}{Undirected\+Weighted\+Graph\+::\+Graph\+Array}$<$ \hyperlink{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{cl\+\_\+\+Index}, \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a5dc96724577a49ee14d4c2e1df3c0579}{cl\+\_\+\+Scalar} $>$$>$ graph)
+\item 
+cl\+\_\+int \hyperlink{class_dijkstra_1_1_dijkstra_c_l_adaceb81f91f37f7533c8e64446a4845b}{Run} ()
+\item 
+std\+::shared\+\_\+ptr$<$ std\+::vector\\*
+$<$ \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a5dc96724577a49ee14d4c2e1df3c0579}{cl\+\_\+\+Scalar} $>$ $>$ \hyperlink{class_dijkstra_1_1_dijkstra_c_l_aafeab7cb87014b004bf788387290eaa6}{Get\+Results\+Array} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+cl\+\_\+int \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a5e54d3932bccd4bf984df2098b125898}{Initialize\+Devices} ()
+\begin{DoxyCompactList}\small\item\em Initialize the selected Open\+C\+L devices. \end{DoxyCompactList}\item 
+cl\+\_\+device\+\_\+id \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a6bfc38ebf6e1d303f908ac254f94df41}{Get\+Max\+Flops\+Device} ()
+\begin{DoxyCompactList}\small\item\em Select one device from the device list with the maximum F\+L\+O\+P\+S. \end{DoxyCompactList}\item 
+\hyperlink{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{cl\+\_\+\+Index} \hyperlink{class_dijkstra_1_1_dijkstra_c_l_afdc37522923aee23fe315bcf8d992275}{Round\+Up\+Work\+Size} (\hyperlink{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{cl\+\_\+\+Index} group\+Size, \hyperlink{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{cl\+\_\+\+Index} global\+Size)
+\item 
+bool \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a2d58915ccd8fa4967947598a4a588d40}{is\+Mask\+Empty} (\hyperlink{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{cl\+\_\+\+Index} $\ast$mask, \hyperlink{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{cl\+\_\+\+Index} mask\+Size)
+\item 
+void \hyperlink{class_dijkstra_1_1_dijkstra_c_l_acd0c8413f67d7bc40994585c59534400}{Prepare\+Device\+Memory} (cl\+\_\+context context, cl\+\_\+command\+\_\+queue command\+Queue, \hyperlink{struct_undirected_weighted_graph_1_1_graph_array}{Undirected\+Weighted\+Graph\+::\+Graph\+Array}$<$ \hyperlink{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{cl\+\_\+\+Index}, \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a5dc96724577a49ee14d4c2e1df3c0579}{cl\+\_\+\+Scalar} $>$ \&graph, cl\+\_\+mem $\ast$vertices\+Device, cl\+\_\+mem $\ast$edges\+Device, cl\+\_\+mem $\ast$weights\+Device, cl\+\_\+mem $\ast$mask\+Device, cl\+\_\+mem $\ast$cost\+Device, cl\+\_\+mem $\ast$updating\+Cost\+Device, size\+\_\+t global\+Work\+Size)
+\item 
+void \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a8fb0b75503b75bb345ed69f3eb67db0c}{check\+Error\+File\+Line} (const char $\ast$file, const int line\+Number)
+\item 
+cl\+\_\+program \hyperlink{class_dijkstra_1_1_dijkstra_c_l_adba3c2be1500db0f3be3da2933dff8f7}{build\+Program} (cl\+\_\+context context)
+\item 
+cl\+\_\+int \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a441934a4066c0f99962c96aded098536}{Run\+On\+Device} (cl\+\_\+context context, cl\+\_\+device\+\_\+id device)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr\\*
+$<$ \hyperlink{struct_undirected_weighted_graph_1_1_graph_array}{Undirected\+Weighted\+Graph\+::\+Graph\+Array}\\*
+$<$ \hyperlink{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{cl\+\_\+\+Index}, \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a5dc96724577a49ee14d4c2e1df3c0579}{cl\+\_\+\+Scalar} $>$ $>$ \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a0b851e99d9aed1cc0671fc537efe3a20}{graph\+\_\+}
+\begin{DoxyCompactList}\small\item\em Predefined Graph\+Array shared pointer. \end{DoxyCompactList}\item 
+\hyperlink{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{cl\+\_\+\+Index} \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a282256a0fd3793379edae35783130833}{num\+Vertices\+\_\+}
+\begin{DoxyCompactList}\small\item\em number of vertices of the graph, calculated from graph\+\_\+. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{cl\+\_\+\+Index} $>$ \hyperlink{class_dijkstra_1_1_dijkstra_c_l_ae0327784ad33bc8cbd5c2c47e067d178}{source\+Vertices\+\_\+}
+\begin{DoxyCompactList}\small\item\em the source vertices list from which the shortest distances to all vertices are calculated. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ std\+::vector\\*
+$<$ \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a5dc96724577a49ee14d4c2e1df3c0579}{cl\+\_\+\+Scalar} $>$ $>$ \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a51a092b08954b8a30b90514f86520b03}{results\+\_\+}
+\begin{DoxyCompactList}\small\item\em the result array pointer. \end{DoxyCompactList}\item 
+cl\+\_\+platform\+\_\+id \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a48fb6896749198f8ecca726b887bac86}{platform\+\_\+}
+\begin{DoxyCompactList}\small\item\em the selected Open\+C\+L platform. \end{DoxyCompactList}\item 
+cl\+\_\+context \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a53f966d6cc79d454cbc48e11467662b4}{context\+\_\+}
+\begin{DoxyCompactList}\small\item\em the selected Open\+C\+L context. \end{DoxyCompactList}\item 
+cl\+\_\+device\+\_\+id \hyperlink{class_dijkstra_1_1_dijkstra_c_l_ac848f9681e88c61e339ab6d70bcfacdf}{device\+\_\+}
+\begin{DoxyCompactList}\small\item\em the selected Open\+C\+L device. \end{DoxyCompactList}\item 
+cl\+\_\+int \hyperlink{class_dijkstra_1_1_dijkstra_c_l_aa4eec2b97cdd4a59fd814035736f0137}{last\+Err\+\_\+}
+\begin{DoxyCompactList}\small\item\em the last error number from Open\+C\+L C A\+P\+I. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple wrapper class for the Open\+C\+L implementation of the Parallel \hyperlink{namespace_dijkstra}{Dijkstra} Algorithm for all-\/pair or selected-\/pair shortest distances calculation. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!cl\+\_\+\+Index@{cl\+\_\+\+Index}}
+\index{cl\+\_\+\+Index@{cl\+\_\+\+Index}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{cl\+\_\+\+Index}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf Dijkstra\+::\+Dijkstra\+C\+L\+::cl\+\_\+\+Index}}}\label{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}
+
+
+Size type for Open\+C\+L. Check the hardware for supported types. 
+
+\hypertarget{class_dijkstra_1_1_dijkstra_c_l_a5dc96724577a49ee14d4c2e1df3c0579}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!cl\+\_\+\+Scalar@{cl\+\_\+\+Scalar}}
+\index{cl\+\_\+\+Scalar@{cl\+\_\+\+Scalar}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{cl\+\_\+\+Scalar}]{\setlength{\rightskip}{0pt plus 5cm}typedef float {\bf Dijkstra\+::\+Dijkstra\+C\+L\+::cl\+\_\+\+Scalar}}}\label{class_dijkstra_1_1_dijkstra_c_l_a5dc96724577a49ee14d4c2e1df3c0579}
+
+
+Value type for Open\+C\+L. Check the hardware for supported types. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_dijkstra_1_1_dijkstra_c_l_a568bd4b94630d1add7a753b827b518e1}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!Dijkstra\+C\+L@{Dijkstra\+C\+L}}
+\index{Dijkstra\+C\+L@{Dijkstra\+C\+L}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{Dijkstra\+C\+L}]{\setlength{\rightskip}{0pt plus 5cm}Dijkstra\+::\+Dijkstra\+C\+L\+::\+Dijkstra\+C\+L (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ {\bf Undirected\+Weighted\+Graph\+::\+Graph\+Array}$<$ {\bf cl\+\_\+\+Index}, {\bf cl\+\_\+\+Scalar} $>$$>$}]{graph}
+\end{DoxyParamCaption}
+)}}\label{class_dijkstra_1_1_dijkstra_c_l_a568bd4b94630d1add7a753b827b518e1}
+Constructor. Create the shortest path problem from a predefined Graph\+Array shared pointer. The size type and value type of the Graph\+Array must be compatible with cl\+\_\+\+Index and cl\+\_\+\+Scalar. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_dijkstra_1_1_dijkstra_c_l_adba3c2be1500db0f3be3da2933dff8f7}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!build\+Program@{build\+Program}}
+\index{build\+Program@{build\+Program}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{build\+Program}]{\setlength{\rightskip}{0pt plus 5cm}cl\+\_\+program Dijkstra\+::\+Dijkstra\+C\+L\+::build\+Program (
+\begin{DoxyParamCaption}
+\item[{cl\+\_\+context}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dijkstra_1_1_dijkstra_c_l_adba3c2be1500db0f3be3da2933dff8f7}
+Build the Open\+C\+L kernel program on the specified context. 
+\begin{DoxyParams}{Parameters}
+{\em context} & the Open\+C\+L context on which the program is built. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dijkstra_1_1_dijkstra_c_l_a8fb0b75503b75bb345ed69f3eb67db0c}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!check\+Error\+File\+Line@{check\+Error\+File\+Line}}
+\index{check\+Error\+File\+Line@{check\+Error\+File\+Line}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{check\+Error\+File\+Line}]{\setlength{\rightskip}{0pt plus 5cm}void Dijkstra\+::\+Dijkstra\+C\+L\+::check\+Error\+File\+Line (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file, }
+\item[{const int}]{line\+Number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dijkstra_1_1_dijkstra_c_l_a8fb0b75503b75bb345ed69f3eb67db0c}
+Check if the returning error number of Open\+C\+L C A\+P\+I is success; if not, show the current source file and line number, and terminate the program. There is no need to call this function directly. This works with the \hyperlink{_dijkstra_c_l_8h_aabe3f1a8b97db4aececc6fd14cc0ae74}{check\+Error()} macro. \hypertarget{class_dijkstra_1_1_dijkstra_c_l_a6bfc38ebf6e1d303f908ac254f94df41}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!Get\+Max\+Flops\+Device@{Get\+Max\+Flops\+Device}}
+\index{Get\+Max\+Flops\+Device@{Get\+Max\+Flops\+Device}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{Get\+Max\+Flops\+Device}]{\setlength{\rightskip}{0pt plus 5cm}cl\+\_\+device\+\_\+id Dijkstra\+::\+Dijkstra\+C\+L\+::\+Get\+Max\+Flops\+Device (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dijkstra_1_1_dijkstra_c_l_a6bfc38ebf6e1d303f908ac254f94df41}
+
+
+Select one device from the device list with the maximum F\+L\+O\+P\+S. 
+
+\hypertarget{class_dijkstra_1_1_dijkstra_c_l_aafeab7cb87014b004bf788387290eaa6}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!Get\+Results\+Array@{Get\+Results\+Array}}
+\index{Get\+Results\+Array@{Get\+Results\+Array}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{Get\+Results\+Array}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ std\+::vector$<$ {\bf Dijkstra\+C\+L\+::cl\+\_\+\+Scalar} $>$ $>$ Dijkstra\+::\+Dijkstra\+C\+L\+::\+Get\+Results\+Array (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dijkstra_1_1_dijkstra_c_l_aafeab7cb87014b004bf788387290eaa6}
+Get the result array pointer. The result is a row-\/major linear storage of the distance matrix. \hypertarget{class_dijkstra_1_1_dijkstra_c_l_a5e54d3932bccd4bf984df2098b125898}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!Initialize\+Devices@{Initialize\+Devices}}
+\index{Initialize\+Devices@{Initialize\+Devices}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{Initialize\+Devices}]{\setlength{\rightskip}{0pt plus 5cm}cl\+\_\+int Dijkstra\+::\+Dijkstra\+C\+L\+::\+Initialize\+Devices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dijkstra_1_1_dijkstra_c_l_a5e54d3932bccd4bf984df2098b125898}
+
+
+Initialize the selected Open\+C\+L devices. 
+
+\hypertarget{class_dijkstra_1_1_dijkstra_c_l_a2d58915ccd8fa4967947598a4a588d40}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!is\+Mask\+Empty@{is\+Mask\+Empty}}
+\index{is\+Mask\+Empty@{is\+Mask\+Empty}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{is\+Mask\+Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool Dijkstra\+::\+Dijkstra\+C\+L\+::is\+Mask\+Empty (
+\begin{DoxyParamCaption}
+\item[{{\bf Dijkstra\+C\+L\+::cl\+\_\+\+Index} $\ast$}]{mask, }
+\item[{{\bf Dijkstra\+C\+L\+::cl\+\_\+\+Index}}]{mask\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dijkstra_1_1_dijkstra_c_l_a2d58915ccd8fa4967947598a4a588d40}
+Simple helper function to check if all the elements of the mask array are zero (empty) using a loop. This function works on host memory. 
+\begin{DoxyParams}{Parameters}
+{\em mask} & mask array pointer in host memory. \\
+\hline
+{\em mask\+Size} & the size of the mask array. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dijkstra_1_1_dijkstra_c_l_acd0c8413f67d7bc40994585c59534400}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!Prepare\+Device\+Memory@{Prepare\+Device\+Memory}}
+\index{Prepare\+Device\+Memory@{Prepare\+Device\+Memory}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{Prepare\+Device\+Memory}]{\setlength{\rightskip}{0pt plus 5cm}void Dijkstra\+::\+Dijkstra\+C\+L\+::\+Prepare\+Device\+Memory (
+\begin{DoxyParamCaption}
+\item[{cl\+\_\+context}]{context, }
+\item[{cl\+\_\+command\+\_\+queue}]{command\+Queue, }
+\item[{{\bf Undirected\+Weighted\+Graph\+::\+Graph\+Array}$<$ {\bf cl\+\_\+\+Index}, {\bf cl\+\_\+\+Scalar} $>$ \&}]{graph, }
+\item[{cl\+\_\+mem $\ast$}]{vertices\+Device, }
+\item[{cl\+\_\+mem $\ast$}]{edges\+Device, }
+\item[{cl\+\_\+mem $\ast$}]{weights\+Device, }
+\item[{cl\+\_\+mem $\ast$}]{mask\+Device, }
+\item[{cl\+\_\+mem $\ast$}]{cost\+Device, }
+\item[{cl\+\_\+mem $\ast$}]{updating\+Cost\+Device, }
+\item[{size\+\_\+t}]{global\+Work\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dijkstra_1_1_dijkstra_c_l_acd0c8413f67d7bc40994585c59534400}
+Prepare the device memory. This function allocates the required device memory, create the host memory pointers, copy the graph data from host memory to device memory. 
+\begin{DoxyParams}{Parameters}
+{\em context} & the Open\+C\+L context. \\
+\hline
+{\em command\+Queue} & the Open\+C\+L command queue to enqueue the allocating and copy operations. \\
+\hline
+{\em graph} & the graph array to be copied. \\
+\hline
+{\em vertices\+Device} & the pointer to where a device memory reference for vertices array is created. \\
+\hline
+{\em edges\+Device} & the pointer to where a device memory reference for edges array is created. \\
+\hline
+{\em weights\+Device} & the pointer to where a device memory reference for weights array is created. \\
+\hline
+{\em mask\+Device} & the pointer to where a device memory reference for mask array is created. \\
+\hline
+{\em cost\+Device} & the pointer to where a device memory reference for cost array is created. \\
+\hline
+{\em updating\+Cost\+Device} & the pointer to where a device memory reference for updating cost array is created. \\
+\hline
+{\em global\+Work\+Size} & rounded-\/up global work size. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dijkstra_1_1_dijkstra_c_l_afdc37522923aee23fe315bcf8d992275}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!Round\+Up\+Work\+Size@{Round\+Up\+Work\+Size}}
+\index{Round\+Up\+Work\+Size@{Round\+Up\+Work\+Size}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{Round\+Up\+Work\+Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dijkstra\+C\+L\+::cl\+\_\+\+Index} Dijkstra\+::\+Dijkstra\+C\+L\+::\+Round\+Up\+Work\+Size (
+\begin{DoxyParamCaption}
+\item[{{\bf cl\+\_\+\+Index}}]{group\+Size, }
+\item[{{\bf cl\+\_\+\+Index}}]{global\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dijkstra_1_1_dijkstra_c_l_afdc37522923aee23fe315bcf8d992275}
+Get the rounded-\/up of the global work size to be enough to cover all the global computing elements. 
+\begin{DoxyParams}{Parameters}
+{\em group\+Size} & the number of computing elements of one workgroup. This is obtained by cl\+Get\+Device\+Info and depending on the hardware. \\
+\hline
+{\em global\+Size} & the number of global computing elements. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dijkstra_1_1_dijkstra_c_l_adaceb81f91f37f7533c8e64446a4845b}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!Run@{Run}}
+\index{Run@{Run}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}cl\+\_\+int Dijkstra\+::\+Dijkstra\+C\+L\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dijkstra_1_1_dijkstra_c_l_adaceb81f91f37f7533c8e64446a4845b}
+Run the parallel shortest distance calculation with default or predefined parameters. The default behavior is to calculate all-\/pair shortest distance matrix using one G\+P\+U with the maximum F\+L\+O\+P\+S. \hypertarget{class_dijkstra_1_1_dijkstra_c_l_a441934a4066c0f99962c96aded098536}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!Run\+On\+Device@{Run\+On\+Device}}
+\index{Run\+On\+Device@{Run\+On\+Device}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{Run\+On\+Device}]{\setlength{\rightskip}{0pt plus 5cm}cl\+\_\+int Dijkstra\+::\+Dijkstra\+C\+L\+::\+Run\+On\+Device (
+\begin{DoxyParamCaption}
+\item[{cl\+\_\+context}]{context, }
+\item[{cl\+\_\+device\+\_\+id}]{device}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dijkstra_1_1_dijkstra_c_l_a441934a4066c0f99962c96aded098536}
+Run the Open\+C\+L kernel program on specified context and device. 
+\begin{DoxyParams}{Parameters}
+{\em context} & the Open\+C\+L context on which the program runs. \\
+\hline
+{\em device} & the Open\+C\+L device on which the program runs. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_dijkstra_1_1_dijkstra_c_l_a53f966d6cc79d454cbc48e11467662b4}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!context\+\_\+@{context\+\_\+}}
+\index{context\+\_\+@{context\+\_\+}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{context\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}cl\+\_\+context Dijkstra\+::\+Dijkstra\+C\+L\+::context\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dijkstra_1_1_dijkstra_c_l_a53f966d6cc79d454cbc48e11467662b4}
+
+
+the selected Open\+C\+L context. 
+
+\hypertarget{class_dijkstra_1_1_dijkstra_c_l_ac848f9681e88c61e339ab6d70bcfacdf}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!device\+\_\+@{device\+\_\+}}
+\index{device\+\_\+@{device\+\_\+}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{device\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}cl\+\_\+device\+\_\+id Dijkstra\+::\+Dijkstra\+C\+L\+::device\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dijkstra_1_1_dijkstra_c_l_ac848f9681e88c61e339ab6d70bcfacdf}
+
+
+the selected Open\+C\+L device. 
+
+\hypertarget{class_dijkstra_1_1_dijkstra_c_l_a0b851e99d9aed1cc0671fc537efe3a20}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!graph\+\_\+@{graph\+\_\+}}
+\index{graph\+\_\+@{graph\+\_\+}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{graph\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<${\bf Undirected\+Weighted\+Graph\+::\+Graph\+Array}$<${\bf cl\+\_\+\+Index}, {\bf cl\+\_\+\+Scalar}$>$ $>$ Dijkstra\+::\+Dijkstra\+C\+L\+::graph\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dijkstra_1_1_dijkstra_c_l_a0b851e99d9aed1cc0671fc537efe3a20}
+
+
+Predefined Graph\+Array shared pointer. 
+
+\hypertarget{class_dijkstra_1_1_dijkstra_c_l_aa4eec2b97cdd4a59fd814035736f0137}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!last\+Err\+\_\+@{last\+Err\+\_\+}}
+\index{last\+Err\+\_\+@{last\+Err\+\_\+}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{last\+Err\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}cl\+\_\+int Dijkstra\+::\+Dijkstra\+C\+L\+::last\+Err\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dijkstra_1_1_dijkstra_c_l_aa4eec2b97cdd4a59fd814035736f0137}
+
+
+the last error number from Open\+C\+L C A\+P\+I. 
+
+\hypertarget{class_dijkstra_1_1_dijkstra_c_l_a282256a0fd3793379edae35783130833}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!num\+Vertices\+\_\+@{num\+Vertices\+\_\+}}
+\index{num\+Vertices\+\_\+@{num\+Vertices\+\_\+}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{num\+Vertices\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cl\+\_\+\+Index} Dijkstra\+::\+Dijkstra\+C\+L\+::num\+Vertices\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dijkstra_1_1_dijkstra_c_l_a282256a0fd3793379edae35783130833}
+
+
+number of vertices of the graph, calculated from graph\+\_\+. 
+
+\hypertarget{class_dijkstra_1_1_dijkstra_c_l_a48fb6896749198f8ecca726b887bac86}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!platform\+\_\+@{platform\+\_\+}}
+\index{platform\+\_\+@{platform\+\_\+}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{platform\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}cl\+\_\+platform\+\_\+id Dijkstra\+::\+Dijkstra\+C\+L\+::platform\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dijkstra_1_1_dijkstra_c_l_a48fb6896749198f8ecca726b887bac86}
+
+
+the selected Open\+C\+L platform. 
+
+\hypertarget{class_dijkstra_1_1_dijkstra_c_l_a51a092b08954b8a30b90514f86520b03}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!results\+\_\+@{results\+\_\+}}
+\index{results\+\_\+@{results\+\_\+}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{results\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$std\+::vector$<${\bf cl\+\_\+\+Scalar}$>$ $>$ Dijkstra\+::\+Dijkstra\+C\+L\+::results\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dijkstra_1_1_dijkstra_c_l_a51a092b08954b8a30b90514f86520b03}
+
+
+the result array pointer. 
+
+\hypertarget{class_dijkstra_1_1_dijkstra_c_l_ae0327784ad33bc8cbd5c2c47e067d178}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!source\+Vertices\+\_\+@{source\+Vertices\+\_\+}}
+\index{source\+Vertices\+\_\+@{source\+Vertices\+\_\+}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
+\subsubsection[{source\+Vertices\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf cl\+\_\+\+Index}$>$ Dijkstra\+::\+Dijkstra\+C\+L\+::source\+Vertices\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dijkstra_1_1_dijkstra_c_l_ae0327784ad33bc8cbd5c2c47e067d178}
+
+
+the source vertices list from which the shortest distances to all vertices are calculated. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_dijkstra_c_l_8h}{Dijkstra\+C\+L.\+h}\item 
+\hyperlink{_dijkstra_c_l_8cpp}{Dijkstra\+C\+L.\+cpp}\end{DoxyCompactItemize}
