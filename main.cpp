@@ -1,8 +1,6 @@
 #include <iostream>
 #include <random>
-#include "AdjacencyList.h"
 #include "DijkstraCL.h"
-#include "BoostAdjacencyList.h"
 #include "BoostDijkstra.h"
 
 using namespace std;
@@ -17,8 +15,6 @@ void Example1() {
   auto adjList = make_shared<AdjacencyList>(10);
   auto boostAdjList = make_shared<BoostAdjacencyList>(10);
   vector<shared_ptr<UndirectedWeightedGraph>> graphList = {adjList, boostAdjList};
-//  GenerateRandomGraph(graphList, 10000);
-//  GenerateRandomGraph()
   GenerateExampleGraph(graphList);
 
   auto g = adjList->GetGraphArray<DijkstraCL::cl_Index, DijkstraCL::cl_Scalar>();
@@ -29,16 +25,17 @@ void Example1() {
   for (auto c : g->weights) cout << " " << c;
   cout << endl << endl;
 
-  DijkstraCL dijkstraCL(g);
-  dijkstraCL.Run();
-  auto dijkstraCLResultMat = dijkstraCL.GetDistanceMatrix();
+  auto dijkstraImpl = DijkstraWithImplementation(DIJKSTRA_IMPLEMENTATION_CL, adjList);
+
+  dijkstraImpl->Run();
+  auto dijkstraCLResultMat = dijkstraImpl->GetDistanceMatrix();
   cout << *dijkstraCLResultMat;
   cout << endl;
   cout << "CL Done." << endl;
 
-  BoostDijkstra boostDijkstra(boostAdjList->GetBoostGraph());
-  boostDijkstra.Run();
-  auto boostResultMat = boostDijkstra.GetDistanceMatrix();
+  dijkstraImpl =  DijkstraWithImplementation(DIJKSTRA_IMPLEMENTATION_BOOST, boostAdjList);
+  dijkstraImpl->Run();
+  auto boostResultMat = dijkstraImpl->GetDistanceMatrix();
   cout << *boostResultMat;
   cout << "Boost Done." << endl;
   cout << "Equality: " << (*dijkstraCLResultMat == *boostResultMat) << endl;
@@ -61,14 +58,14 @@ void Example2() {
   for (auto c : g->weights) cout << " " << c;
   cout << endl << endl;
 
-  DijkstraCL dijkstraCL(g);
+  DijkstraCL dijkstraCL(adjList);
   dijkstraCL.Run();
   auto dijkstraCLResultMat = dijkstraCL.GetDistanceMatrix();
 //  cout << *dijkstraCLResultMat;
   cout << endl;
   cout << "CL Done." << endl;
 
-  BoostDijkstra boostDijkstra(boostAdjList->GetBoostGraph());
+  BoostDijkstra boostDijkstra(boostAdjList);
   boostDijkstra.Run();
   auto boostResultMat = boostDijkstra.GetDistanceMatrix();
 //  cout << *boostResultMat;
@@ -79,8 +76,8 @@ void Example2() {
 int main() {
   cout << "Example 1" << endl;
   Example1();
-  cout << "Example 2" << endl;
-  Example2();
+//  cout << "Example 2" << endl;
+//  Example2();
 
   return 0;
 }

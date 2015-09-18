@@ -13,12 +13,13 @@ namespace GraphUtils {
 
 class BoostAdjacencyList : public UndirectedWeightedGraph {
  public:
-  typedef boost::adjacency_list<boost::listS, boost::vecS, boost::undirectedS, boost::no_property, boost::property<boost::edge_weight_t, Scalar>> Graph;
-  typedef boost::graph_traits<Graph>::vertex_descriptor Vertex;
+  typedef boost::adjacency_list<boost::listS, boost::vecS, boost::undirectedS, boost::no_property, boost::property<boost::edge_weight_t, Scalar>>
+      BoostGraphData;
+  typedef boost::graph_traits<BoostGraphData>::vertex_descriptor Vertex;
   typedef std::pair<int, int> Edge;
-  typedef boost::property_map<Graph, boost::vertex_index_t>::type IndexMap;
+  typedef boost::property_map<BoostGraphData, boost::vertex_index_t>::type IndexMap;
   struct BoostGraph {
-    Graph graph;
+    BoostGraphData graph;
     size_t numVertices;
     IndexMap index;
   };

@@ -10,12 +10,14 @@
 #include <boost/graph/dijkstra_shortest_paths.hpp>
 #include "BoostAdjacencyList.h"
 #include "Matrix.h"
+#include "Dijkstra.h"
 
 namespace Dijkstra {
 
-class BoostDijkstra {
+//class Dijkstra;
+class BoostDijkstra : public Dijkstra {
  public:
-  BoostDijkstra(std::shared_ptr<GraphUtils::BoostAdjacencyList::BoostGraph> graph);
+  BoostDijkstra(std::shared_ptr<GraphUtils::BoostAdjacencyList> graph);
   int Run();
   std::shared_ptr<gsl::Matrix> GetDistanceMatrix();
  private:

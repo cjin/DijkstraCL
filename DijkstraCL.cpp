@@ -66,21 +66,21 @@ __kernel void initializeBuffers(__global int *masks, __global float *costs, __gl
 }
 )";
 
-DijkstraCL::DijkstraCL(std::shared_ptr<GraphUtils::GraphArray<cl_Index, cl_Scalar>> graph)
-    : graph_(graph),
-      numVertices_(static_cast<cl_Index>(graph->vertices.size())),
-      sourceVertices_(graph->vertices.size(), 0),
+DijkstraCL::DijkstraCL(std::shared_ptr<GraphUtils::AdjacencyList> adjList)
+    : graph_(adjList->GetGraphArray<cl_Index, cl_Scalar>()),
+      numVertices_(static_cast<cl_Index>(graph_->vertices.size())),
+      sourceVertices_(graph_->vertices.size(), 0),
       lastErr_(CL_SUCCESS) {
   std::iota(sourceVertices_.begin(), sourceVertices_.end(), 0);
 }
 
-cl_int DijkstraCL::Run() {
+int DijkstraCL::Run() {
   // Allocate results array
   results_.reset(new std::vector<cl_Scalar>(sourceVertices_.size() * graph_->vertices.size(), 0));
   lastErr_ = InitializeDevices();
   if (lastErr_ != CL_SUCCESS) return lastErr_;
   RunOnDevice(context_, device_);
-  return lastErr_;
+  return static_cast<int>(lastErr_);
 }
 
 cl_int DijkstraCL::InitializeDevices() {

@@ -31,25 +31,27 @@
 #include "AdjacencyList.h"
 #include "Matrix.h"
 #include "typedefs.h"
+#include "Dijkstra.h"
 
 namespace Dijkstra {
 
+
 //!  A simple wrapper class for the OpenCL implementation of the Parallel Dijkstra Algorithm
 //! for all-pair or selected-pair shortest distances calculation.
-class DijkstraCL {
+class DijkstraCL : public Dijkstra {
  public:
   typedef TYPEDEFS_CL_INDEX cl_Index; //!< Size type for OpenCL. Check the hardware for supported types.
   typedef TYPEDEFS_CL_SCALAR cl_Scalar; //!< Value type for OpenCL. Check the hardware for supported types.
 
   //! Constructor.
-  //! Create the shortest path problem from a predefined GraphArray shared pointer.
-  //! The size type and value type of the GraphArray must be compatible with cl_Index and cl_Scalar.
-  DijkstraCL(std::shared_ptr<GraphUtils::GraphArray<cl_Index, cl_Scalar>> graph);
+  //! Create the shortest path problem from a predefined AdjacencyList shared pointer.
+  //! The size type and value type of the GraphArray from the AdjacencyList must be compatible with cl_Index and cl_Scalar.
+  DijkstraCL(std::shared_ptr<GraphUtils::AdjacencyList> adjList);
 
   //! Run the parallel shortest distance calculation with default or predefined parameters.
   //! The default behavior is to calculate all-pair shortest distance matrix using one GPU with the
   //! maximum FLOPS.
-  cl_int Run();
+  int Run();
 
   //! Get the result array pointer.
   //! The result is a row-major linear storage of the distance matrix.

@@ -15,7 +15,7 @@ typedef float \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a5dc96724577a49ee14d4c2
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_dijkstra_1_1_dijkstra_c_l_a568bd4b94630d1add7a753b827b518e1}{Dijkstra\+C\+L} (std\+::shared\+\_\+ptr$<$ \hyperlink{struct_undirected_weighted_graph_1_1_graph_array}{Undirected\+Weighted\+Graph\+::\+Graph\+Array}$<$ \hyperlink{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{cl\+\_\+\+Index}, \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a5dc96724577a49ee14d4c2e1df3c0579}{cl\+\_\+\+Scalar} $>$$>$ graph)
+\hyperlink{class_dijkstra_1_1_dijkstra_c_l_a568bd4b94630d1add7a753b827b518e1}{Dijkstra\+C\+L} (std\+::shared\+\_\+ptr$<$ \hyperlink{struct_undirected_weighted_graph_1_1_graph_array}{Undirected\+Weighted\+BoostGraphData\+::\+BoostGraphData\+Array}$<$ \hyperlink{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{cl\+\_\+\+Index}, \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a5dc96724577a49ee14d4c2e1df3c0579}{cl\+\_\+\+Scalar} $>$$>$ graph)
 \item 
 cl\+\_\+int \hyperlink{class_dijkstra_1_1_dijkstra_c_l_adaceb81f91f37f7533c8e64446a4845b}{Run} ()
 \item 
@@ -33,7 +33,7 @@ cl\+\_\+device\+\_\+id \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a6bfc38ebf6e1d
 \item 
 bool \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a2d58915ccd8fa4967947598a4a588d40}{is\+Mask\+Empty} (\hyperlink{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{cl\+\_\+\+Index} $\ast$mask, \hyperlink{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{cl\+\_\+\+Index} mask\+Size)
 \item 
-void \hyperlink{class_dijkstra_1_1_dijkstra_c_l_acd0c8413f67d7bc40994585c59534400}{Prepare\+Device\+Memory} (cl\+\_\+context context, cl\+\_\+command\+\_\+queue command\+Queue, \hyperlink{struct_undirected_weighted_graph_1_1_graph_array}{Undirected\+Weighted\+Graph\+::\+Graph\+Array}$<$ \hyperlink{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{cl\+\_\+\+Index}, \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a5dc96724577a49ee14d4c2e1df3c0579}{cl\+\_\+\+Scalar} $>$ \&graph, cl\+\_\+mem $\ast$vertices\+Device, cl\+\_\+mem $\ast$edges\+Device, cl\+\_\+mem $\ast$weights\+Device, cl\+\_\+mem $\ast$mask\+Device, cl\+\_\+mem $\ast$cost\+Device, cl\+\_\+mem $\ast$updating\+Cost\+Device, size\+\_\+t global\+Work\+Size)
+void \hyperlink{class_dijkstra_1_1_dijkstra_c_l_acd0c8413f67d7bc40994585c59534400}{Prepare\+Device\+Memory} (cl\+\_\+context context, cl\+\_\+command\+\_\+queue command\+Queue, \hyperlink{struct_undirected_weighted_graph_1_1_graph_array}{Undirected\+Weighted\+BoostGraphData\+::\+BoostGraphData\+Array}$<$ \hyperlink{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{cl\+\_\+\+Index}, \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a5dc96724577a49ee14d4c2e1df3c0579}{cl\+\_\+\+Scalar} $>$ \&graph, cl\+\_\+mem $\ast$vertices\+Device, cl\+\_\+mem $\ast$edges\+Device, cl\+\_\+mem $\ast$weights\+Device, cl\+\_\+mem $\ast$mask\+Device, cl\+\_\+mem $\ast$cost\+Device, cl\+\_\+mem $\ast$updating\+Cost\+Device, size\+\_\+t global\+Work\+Size)
 \item 
 void \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a8fb0b75503b75bb345ed69f3eb67db0c}{check\+Error\+File\+Line} (const char $\ast$file, const int line\+Number)
 \item 
@@ -45,9 +45,9 @@ cl\+\_\+int \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a441934a4066c0f99962c96ad
 \begin{DoxyCompactItemize}
 \item 
 std\+::shared\+\_\+ptr\\*
-$<$ \hyperlink{struct_undirected_weighted_graph_1_1_graph_array}{Undirected\+Weighted\+Graph\+::\+Graph\+Array}\\*
+$<$ \hyperlink{struct_undirected_weighted_graph_1_1_graph_array}{Undirected\+Weighted\+BoostGraphData\+::\+BoostGraphData\+Array}\\*
 $<$ \hyperlink{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{cl\+\_\+\+Index}, \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a5dc96724577a49ee14d4c2e1df3c0579}{cl\+\_\+\+Scalar} $>$ $>$ \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a0b851e99d9aed1cc0671fc537efe3a20}{graph\+\_\+}
-\begin{DoxyCompactList}\small\item\em Predefined Graph\+Array shared pointer. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Predefined BoostGraphData\+Array shared pointer. \end{DoxyCompactList}\item
 \hyperlink{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{cl\+\_\+\+Index} \hyperlink{class_dijkstra_1_1_dijkstra_c_l_a282256a0fd3793379edae35783130833}{num\+Vertices\+\_\+}
 \begin{DoxyCompactList}\small\item\em number of vertices of the graph, calculated from graph\+\_\+. \end{DoxyCompactList}\item 
 std\+::vector$<$ \hyperlink{class_dijkstra_1_1_dijkstra_c_l_aab92585b062690f0835f154dc28f8c04}{cl\+\_\+\+Index} $>$ \hyperlink{class_dijkstra_1_1_dijkstra_c_l_ae0327784ad33bc8cbd5c2c47e067d178}{source\+Vertices\+\_\+}
@@ -90,10 +90,10 @@ Value type for Open\+C\+L. Check the hardware for supported types.
 \index{Dijkstra\+C\+L@{Dijkstra\+C\+L}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
 \subsubsection[{Dijkstra\+C\+L}]{\setlength{\rightskip}{0pt plus 5cm}Dijkstra\+::\+Dijkstra\+C\+L\+::\+Dijkstra\+C\+L (
 \begin{DoxyParamCaption}
-\item[{std\+::shared\+\_\+ptr$<$ {\bf Undirected\+Weighted\+Graph\+::\+Graph\+Array}$<$ {\bf cl\+\_\+\+Index}, {\bf cl\+\_\+\+Scalar} $>$$>$}]{graph}
+\item[{std\+::shared\+\_\+ptr$<$ {\bf Undirected\+Weighted\+BoostGraphData\+::\+BoostGraphData\+Array}$<$ {\bf cl\+\_\+\+Index}, {\bf cl\+\_\+\+Scalar} $>$$>$}]{graph}
 \end{DoxyParamCaption}
 )}}\label{class_dijkstra_1_1_dijkstra_c_l_a568bd4b94630d1add7a753b827b518e1}
-Constructor. Create the shortest path problem from a predefined Graph\+Array shared pointer. The size type and value type of the Graph\+Array must be compatible with cl\+\_\+\+Index and cl\+\_\+\+Scalar. 
+Constructor. Create the shortest path problem from a predefined BoostGraphData\+Array shared pointer. The size type and value type of the BoostGraphData\+Array must be compatible with cl\+\_\+\+Index and cl\+\_\+\+Scalar.
 
 \subsection{Member Function Documentation}
 \hypertarget{class_dijkstra_1_1_dijkstra_c_l_adba3c2be1500db0f3be3da2933dff8f7}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!build\+Program@{build\+Program}}
@@ -166,7 +166,7 @@ Simple helper function to check if all the elements of the mask array are zero (
 \begin{DoxyParamCaption}
 \item[{cl\+\_\+context}]{context, }
 \item[{cl\+\_\+command\+\_\+queue}]{command\+Queue, }
-\item[{{\bf Undirected\+Weighted\+Graph\+::\+Graph\+Array}$<$ {\bf cl\+\_\+\+Index}, {\bf cl\+\_\+\+Scalar} $>$ \&}]{graph, }
+\item[{{\bf Undirected\+Weighted\+BoostGraphData\+::\+BoostGraphData\+Array}$<$ {\bf cl\+\_\+\+Index}, {\bf cl\+\_\+\+Scalar} $>$ \&}]{graph, }
 \item[{cl\+\_\+mem $\ast$}]{vertices\+Device, }
 \item[{cl\+\_\+mem $\ast$}]{edges\+Device, }
 \item[{cl\+\_\+mem $\ast$}]{weights\+Device, }
@@ -255,10 +255,10 @@ the selected Open\+C\+L device.
 
 \hypertarget{class_dijkstra_1_1_dijkstra_c_l_a0b851e99d9aed1cc0671fc537efe3a20}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!graph\+\_\+@{graph\+\_\+}}
 \index{graph\+\_\+@{graph\+\_\+}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}
-\subsubsection[{graph\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<${\bf Undirected\+Weighted\+Graph\+::\+Graph\+Array}$<${\bf cl\+\_\+\+Index}, {\bf cl\+\_\+\+Scalar}$>$ $>$ Dijkstra\+::\+Dijkstra\+C\+L\+::graph\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dijkstra_1_1_dijkstra_c_l_a0b851e99d9aed1cc0671fc537efe3a20}
+\subsubsection[{graph\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<${\bf Undirected\+Weighted\+BoostGraphData\+::\+BoostGraphData\+Array}$<${\bf cl\+\_\+\+Index}, {\bf cl\+\_\+\+Scalar}$>$ $>$ Dijkstra\+::\+Dijkstra\+C\+L\+::graph\+\_\+\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dijkstra_1_1_dijkstra_c_l_a0b851e99d9aed1cc0671fc537efe3a20}
 
 
-Predefined Graph\+Array shared pointer. 
+Predefined BoostGraphData\+Array shared pointer.
 
 \hypertarget{class_dijkstra_1_1_dijkstra_c_l_aa4eec2b97cdd4a59fd814035736f0137}{\index{Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}!last\+Err\+\_\+@{last\+Err\+\_\+}}
 \index{last\+Err\+\_\+@{last\+Err\+\_\+}!Dijkstra\+::\+Dijkstra\+C\+L@{Dijkstra\+::\+Dijkstra\+C\+L}}

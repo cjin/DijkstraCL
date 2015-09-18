@@ -14,7 +14,7 @@ void BoostAdjacencyList::Connect(Index a, Index b, Scalar weight) {
 }
 
 std::shared_ptr<BoostAdjacencyList::BoostGraph> BoostAdjacencyList::GetBoostGraph() {
-  Graph graph(&edges_[0], &edges_[0] + edges_.size(), &weights_[0], numVertices_);
+  BoostGraphData graph(&edges_[0], &edges_[0] + edges_.size(), &weights_[0], numVertices_);
   IndexMap index = get(boost::vertex_index, graph);
   std::shared_ptr<BoostGraph> boostGraph(new BoostGraph());
   boostGraph->numVertices = numVertices_;
