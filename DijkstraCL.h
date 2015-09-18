@@ -71,10 +71,11 @@ class DijkstraCL {
   cl_device_id GetMaxFlopsDevice();
 
   //! Get the rounded-up of the global work size to be enough to cover all the global computing elements.
+  //! Note that the size types are defined as type size_t according to OpenCL API.
   //! \param groupSize the number of computing elements of one workgroup.
   //! This is obtained by clGetDeviceInfo and depending on the hardware.
   //! \param globalSize the number of global computing elements.
-  cl_Index RoundUpWorkSize(cl_Index groupSize, cl_Index globalSize);
+  size_t RoundUpWorkSize(size_t groupSize, size_t globalSize);
 
   //! Simple helper function to check if all the elements of the mask array are zero (empty) using a loop.
   //! This function works on host memory.

@@ -68,7 +68,7 @@ __kernel void initializeBuffers(__global int *masks, __global float *costs, __gl
 
 DijkstraCL::DijkstraCL(std::shared_ptr<GraphUtils::GraphArray<cl_Index, cl_Scalar>> graph)
     : graph_(graph),
-      numVertices_(graph->vertices.size()),
+      numVertices_(static_cast<cl_Index>(graph->vertices.size())),
       sourceVertices_(graph->vertices.size(), 0),
       lastErr_(CL_SUCCESS) {
   std::iota(sourceVertices_.begin(), sourceVertices_.end(), 0);
@@ -294,8 +294,8 @@ cl_program DijkstraCL::buildProgram(cl_context context) {
   return program;
 }
 
-DijkstraCL::cl_Index DijkstraCL::RoundUpWorkSize(cl_Index groupSize, cl_Index globalSize) {
-  cl_Index remainder = globalSize % groupSize;
+size_t DijkstraCL::RoundUpWorkSize(size_t groupSize, size_t globalSize) {
+  size_t remainder = globalSize % groupSize;
   if (remainder == 0) return globalSize;
   return globalSize + groupSize - remainder;
 }
