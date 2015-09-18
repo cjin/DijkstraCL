@@ -22,7 +22,7 @@ namespace gsl {
 class Matrix {
  public:
   gsl_matrix * m_; //!< Plain pointer for actual GSL matrix type; use with caution.
-  Scalar equality_limit_ = 1e-1; //!< Floating point equality precision; difference less than this value is considered no difference.
+  Scalar equality_limit_ = 1e-12; //!< Floating point equality precision; difference less than this value is considered no difference.
 
   //! Default constructor.
   //! No GSL matrix will be allocated; the plain pointer to the matrix is set to NULL.
