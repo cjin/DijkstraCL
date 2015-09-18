@@ -23,4 +23,12 @@ std::shared_ptr<BoostAdjacencyList::BoostGraph> BoostAdjacencyList::GetBoostGrap
   return boostGraph;
 }
 
+Index BoostAdjacencyList::NumVertices() const {
+  return numVertices_;
+}
+
+Index BoostAdjacencyList::NumEdges() const {
+  return edges_.size();
+}
+
 }

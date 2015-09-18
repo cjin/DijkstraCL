@@ -25,6 +25,8 @@ class BoostAdjacencyList : public UndirectedWeightedGraph {
   BoostAdjacencyList(Index numVertices);
   std::shared_ptr<BoostGraph> GetBoostGraph();
   void Connect(Index a, Index b, Scalar weight);
+  Index NumVertices() const;
+  Index NumEdges() const;
  private:
   Index numVertices_;
   std::vector<Edge> edges_;

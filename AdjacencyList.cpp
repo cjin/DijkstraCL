@@ -39,6 +39,7 @@ typename AdjacencyList::ListNode *AdjacencyList::ConnectNode(AdjacencyList::List
   }
   if (node->idx > b) { // insert in the list
     ListNode * newNode = new ListNode(b, weight, node);
+    numEdges_++;
     return newNode;
   }
   node->next = ConnectNode(node->next, b, weight);
@@ -63,13 +64,12 @@ std::shared_ptr<GraphArray<T_Index, T_Scalar>> AdjacencyList::GetGraphArray() co
   auto graph = std::make_shared<GraphArray<T_Index, T_Scalar>>();
   graph->vertices.resize(numVertices_);
   graph->edges.resize(numEdges_);
-  graph->weights.resize(numEdges_);
+  graph->weights.resize(numEdges_, std::numeric_limits<T_Scalar>::max());
   T_Index base = 0;
   for (T_Index i = 0; i < numVertices_; ++i) {
     graph->vertices[i] = base;
     base += Traverse(list_[i], base, 0, *graph);
   }
-  // return a current copy of cache in case of cache flushing without acknowledgement
   return std::make_shared<GraphArray<T_Index, T_Scalar>>(*graph);
 }
 
