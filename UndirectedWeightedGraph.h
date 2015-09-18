@@ -13,9 +13,9 @@ namespace UndirectedWeightedGraph {
 class UndirectedWeightedGraph {
  public:
   virtual void Connect(Index a, Index b, Scalar weight) = 0;
-  virtual Scalar GetWeight(Index a, Index b) const = 0;
-  virtual Index NumVertices() const = 0;
-  virtual Index NumEdges() const = 0;
+//  virtual Scalar GetWeight(Index a, Index b) const = 0;
+//  virtual Index NumVertices() const = 0;
+//  virtual Index NumEdges() const = 0;
 };
 
 }

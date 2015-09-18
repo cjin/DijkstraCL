@@ -28,7 +28,7 @@ struct GraphArray {
   GraphArray(const GraphArray& g) : vertices(g.vertices), edges(g.edges), weights(g.weights) { }
 };
 
-class AdjacencyList {
+class AdjacencyList : public UndirectedWeightedGraph {
  public:
   AdjacencyList(Index numVertices);
   AdjacencyList(const AdjacencyList& other);

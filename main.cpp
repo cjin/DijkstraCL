@@ -3,14 +3,16 @@
 #include "DijkstraCL.h"
 
 using namespace std;
+
+void GenerateRandomGraph(std::shared_ptr<UndirectedWeightedGraph::UndirectedWeightedGraph> graph);
+
 int main() {
 
-  UndirectedWeightedGraph::AdjacencyList adjList(10);
-  adjList.Connect(0, 2, 1);
-  adjList.Connect(2, 3, 1);
-  adjList.Connect(2, 5, 1);
-  adjList.Connect(4, 8, 1);
-  auto g = adjList.GetGraphArray<Dijkstra::DijkstraCL::cl_Index, Dijkstra::DijkstraCL::cl_Scalar>();
+  auto adjList = make_shared<UndirectedWeightedGraph::AdjacencyList>(10);
+  std::shared_ptr<UndirectedWeightedGraph::UndirectedWeightedGraph> graph(adjList);
+  GenerateRandomGraph(graph);
+
+  auto g = adjList->GetGraphArray<Dijkstra::DijkstraCL::cl_Index, Dijkstra::DijkstraCL::cl_Scalar>();
   for (auto c : g->vertices) cout << " " << c;
   cout << endl;
   for (auto c : g->edges) cout << " " << c;
@@ -35,4 +37,11 @@ int main() {
   }
 
   return 0;
+}
+
+void GenerateRandomGraph(std::shared_ptr<UndirectedWeightedGraph::UndirectedWeightedGraph> graph) {
+  graph->Connect(0, 2, 1);
+  graph->Connect(2, 3, 1);
+  graph->Connect(2, 5, 1);
+  graph->Connect(4, 8, 1);
 }
