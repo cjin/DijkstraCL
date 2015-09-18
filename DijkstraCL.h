@@ -30,7 +30,7 @@
 #include <iostream>
 #include "AdjacencyList.h"
 #include "Matrix.h"
-
+#include "typedefs.h"
 
 namespace Dijkstra {
 
@@ -38,8 +38,8 @@ namespace Dijkstra {
 //! for all-pair or selected-pair shortest distances calculation.
 class DijkstraCL {
  public:
-  typedef int cl_Index; //!< Size type for OpenCL. Check the hardware for supported types.
-  typedef float cl_Scalar; //!< Value type for OpenCL. Check the hardware for supported types.
+  typedef TYPEDEFS_CL_INDEX cl_Index; //!< Size type for OpenCL. Check the hardware for supported types.
+  typedef TYPEDEFS_CL_SCALAR cl_Scalar; //!< Value type for OpenCL. Check the hardware for supported types.
 
   //! Constructor.
   //! Create the shortest path problem from a predefined GraphArray shared pointer.
