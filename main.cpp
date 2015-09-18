@@ -5,12 +5,12 @@
 using namespace std;
 int main() {
 
-  UndirectedWeightedGraph::AdjacencyList<Dijkstra::DijkstraCL::cl_Index, Dijkstra::DijkstraCL::cl_Scalar> adjList(10);
+  UndirectedWeightedGraph::AdjacencyList adjList(10);
   adjList.Connect(0, 2, 1);
   adjList.Connect(2, 3, 1);
   adjList.Connect(2, 5, 1);
   adjList.Connect(4, 8, 1);
-  auto g = adjList.GetGraphArray();
+  auto g = adjList.GetGraphArray<Dijkstra::DijkstraCL::cl_Index, Dijkstra::DijkstraCL::cl_Scalar>();
   for (auto c : g->vertices) cout << " " << c;
   cout << endl;
   for (auto c : g->edges) cout << " " << c;

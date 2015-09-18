@@ -28,32 +28,32 @@ struct GraphArray {
   GraphArray(const GraphArray& g) : vertices(g.vertices), edges(g.edges), weights(g.weights) { }
 };
 
-template <typename T_Index, typename T_Scalar>
 class AdjacencyList {
  public:
-  AdjacencyList(T_Index numVertices);
+  AdjacencyList(Index numVertices);
   AdjacencyList(const AdjacencyList& other);
   ~AdjacencyList();
-  void Connect(T_Index a, T_Index b, T_Scalar weight);
-  T_Scalar GetWeight(T_Index a, T_Index b) const;
-  T_Index NumVertices() const;
-  T_Index NumEdges() const;
+  void Connect(Index a, Index b, Scalar weight);
+  Scalar GetWeight(Index a, Index b) const;
+  Index NumVertices() const;
+  Index NumEdges() const;
+  template <typename T_Index, typename T_Scalar>
   std::shared_ptr<GraphArray<T_Index, T_Scalar>> GetGraphArray() const;
-  const AdjacencyList<T_Index, T_Scalar>& operator=(const AdjacencyList<T_Index, T_Scalar>& other);
+  const AdjacencyList& operator=(const AdjacencyList& other);
  private:
   struct ListNode
   {
-    T_Index idx;
-    T_Scalar weight;
+    Index idx;
+    Scalar weight;
     ListNode * next;
-    ListNode(T_Index idx, T_Scalar weight, ListNode * next = NULL) : idx(idx), weight(weight), next(next) { }
+    ListNode(Index idx, Scalar weight, ListNode * next = NULL) : idx(idx), weight(weight), next(next) { }
   };
   ListNode ** list_;
-  T_Index numVertices_;
-  T_Index numEdges_;
-  mutable std::shared_ptr<GraphArray<T_Index, T_Scalar>> graph_;
-  ListNode * ConnectNode(ListNode *node, T_Index d, T_Scalar weight);
-  T_Index Traverse(ListNode * node, T_Index base, T_Index depth) const;
+  Index numVertices_;
+  Index numEdges_;
+  ListNode * ConnectNode(ListNode *node, Index d, Scalar weight);
+  template <typename T_Index, typename T_Scalar>
+  Index Traverse(ListNode * node, Index base, Index depth, GraphArray<T_Index, T_Scalar>& graph) const;
   void RemoveNode(ListNode * node);
   void CopyFrom(const AdjacencyList&);
   ListNode * CopyNode(ListNode *dest, ListNode *src);

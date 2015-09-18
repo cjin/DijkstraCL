@@ -7,9 +7,9 @@
 //! This code is adapted from the example code (by Dan Ginsburg) for the book
 //! OpenCL Programming Guide (by Munish, et al.)
 //! (http://www.heterogeneouscompute.org/?page_id=5)
-//! with some tweaks and one data reading synchronization bug fixed for large datasets
-//! and adding multiple source shortest distances support.
-//! Both of the code and the original code implements the parallel Dijkstra Algorithm from
+//! with some tweaks, one data reading synchronization bug fixed for large datasets,
+//! and multiple source shortest distances support added.
+//! Both of this code and the original code implemented the parallel Dijkstra Algorithm from
 //! the paper "Accelerating large graph algorithms on the GPU using CUDA" (by Harish and Narayanan).
 //!
 //! \author    Can

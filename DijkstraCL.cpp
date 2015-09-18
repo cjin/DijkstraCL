@@ -168,7 +168,6 @@ cl_int DijkstraCL::RunOnDevice(cl_context context, cl_device_id device) {
   cl_mem maskDevice;
   cl_mem costDevice;
   cl_mem updatingCostDevice;
-  std::cout << "cl_mem " << sizeof(cl_mem) << " cl_Scalar " << sizeof(cl_Scalar) << std::endl;
 
   // Allocate and copy data into device
   PrepareDeviceMemory(context, commandQueue, *graph_, &verticesDevice, &edgesDevice, &weightsDevice,

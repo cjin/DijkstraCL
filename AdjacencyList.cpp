@@ -6,33 +6,28 @@
 
 namespace UndirectedWeightedGraph {
 
-template<typename T_Index, typename T_Scalar>
-AdjacencyList<T_Index, T_Scalar>::AdjacencyList(T_Index numVertices) : numVertices_(numVertices), numEdges_(0), graph_(nullptr) {
+AdjacencyList::AdjacencyList(Index numVertices) : numVertices_(numVertices), numEdges_(0) {
   list_ = new ListNode * [numVertices];
-  for (T_Index i = 0; i < numVertices; ++i) {
+  for (Index i = 0; i < numVertices; ++i) {
     list_[i] = NULL;
   }
 }
 
-template<typename T_Index, typename T_Scalar>
-AdjacencyList<T_Index, T_Scalar>::~AdjacencyList() {
-  for (T_Index i = 0; i < numVertices_; ++i) {
+AdjacencyList::~AdjacencyList() {
+  for (Index i = 0; i < numVertices_; ++i) {
     RemoveNode(list_[i]);
   }
   delete [] list_;
 }
 
-template<typename T_Index, typename T_Scalar>
-void AdjacencyList<T_Index, T_Scalar>::Connect(T_Index a, T_Index b, T_Scalar weight) {
+void AdjacencyList::Connect(Index a, Index b, Scalar weight) {
   if (a == b) return;
-  if (graph_ != nullptr) graph_.reset();
   if (a > b) std::swap(a, b);
   list_[a] = ConnectNode(list_[a], b, weight);
   list_[b] = ConnectNode(list_[b], a, weight);
 }
 
-template<typename T_Index, typename T_Scalar>
-typename AdjacencyList<T_Index, T_Scalar>::ListNode *AdjacencyList<T_Index, T_Scalar>::ConnectNode(AdjacencyList<T_Index, T_Scalar>::ListNode *node, T_Index b, T_Scalar weight) {
+typename AdjacencyList::ListNode *AdjacencyList::ConnectNode(AdjacencyList::ListNode *node, Index b, Scalar weight) {
   if (node == NULL) { // insert as the last node in the list
     ListNode * newNode = new ListNode(b, weight);
     numEdges_++;
@@ -50,93 +45,87 @@ typename AdjacencyList<T_Index, T_Scalar>::ListNode *AdjacencyList<T_Index, T_Sc
   return node;
 }
 
-template <typename T_Index, typename T_Scalar>
-T_Scalar AdjacencyList<T_Index, T_Scalar>::GetWeight(T_Index a, T_Index b) const {
+Scalar AdjacencyList::GetWeight(Index a, Index b) const {
   throw std::invalid_argument("Not implemented");
   return 0;
 }
 
-template <typename T_Index, typename T_Scalar>
-T_Index AdjacencyList<T_Index, T_Scalar>::NumVertices() const {
+Index AdjacencyList::NumVertices() const {
   return numVertices_;
 }
 
-template <typename T_Index, typename T_Scalar>
-T_Index AdjacencyList<T_Index, T_Scalar>::NumEdges() const {
+Index AdjacencyList::NumEdges() const {
   return numEdges_;
 }
 
 template <typename T_Index, typename T_Scalar>
-std::shared_ptr<GraphArray<T_Index, T_Scalar>> AdjacencyList<T_Index, T_Scalar>::GetGraphArray() const {
-  if (graph_ != nullptr) return std::make_shared<GraphArray<T_Index, T_Scalar>>(*graph_);
-  graph_ = std::make_shared<GraphArray<T_Index, T_Scalar>>();
-  graph_->vertices.resize(numVertices_);
-  graph_->edges.resize(numEdges_);
-  graph_->weights.resize(numEdges_);
+std::shared_ptr<GraphArray<T_Index, T_Scalar>> AdjacencyList::GetGraphArray() const {
+  auto graph = std::make_shared<GraphArray<T_Index, T_Scalar>>();
+  graph->vertices.resize(numVertices_);
+  graph->edges.resize(numEdges_);
+  graph->weights.resize(numEdges_);
   T_Index base = 0;
   for (T_Index i = 0; i < numVertices_; ++i) {
-    graph_->vertices[i] = base;
-    base += Traverse(list_[i], base, 0);
+    graph->vertices[i] = base;
+    base += Traverse(list_[i], base, 0, *graph);
   }
   // return a current copy of cache in case of cache flushing without acknowledgement
-  return std::make_shared<GraphArray<T_Index, T_Scalar>>(*graph_);
+  return std::make_shared<GraphArray<T_Index, T_Scalar>>(*graph);
 }
 
 template <typename T_Index, typename T_Scalar>
-T_Index AdjacencyList<T_Index, T_Scalar>::Traverse(AdjacencyList<T_Index, T_Scalar>::ListNode *node, T_Index base, T_Index depth) const {
+Index AdjacencyList::Traverse(AdjacencyList::ListNode *node, Index base, Index depth, GraphArray<T_Index, T_Scalar>& graph) const {
   if (!node) return depth;
-  graph_->edges[base + depth] = node->idx;
-  graph_->weights[base + depth] = node->weight;
-  return Traverse(node->next, base, depth + 1);
+  graph.edges[base + depth] = node->idx;
+  graph.weights[base + depth] = node->weight;
+  return Traverse(node->next, base, depth + 1, graph);
 }
 
-template <typename T_Index, typename T_Scalar>
-void AdjacencyList<T_Index, T_Scalar>::RemoveNode(AdjacencyList<T_Index, T_Scalar>::ListNode *node) {
+void AdjacencyList::RemoveNode(AdjacencyList::ListNode *node) {
   if (!node) return;
   RemoveNode(node->next);
   delete node;
 }
 
-template <typename T_Index, typename T_Scalar>
-void AdjacencyList<T_Index, T_Scalar>::CopyFrom(const AdjacencyList &adjacencyList) {
+void AdjacencyList::CopyFrom(const AdjacencyList &adjacencyList) {
   if (this == &adjacencyList) return;
-  for (T_Index i = 0; i < numVertices_; ++i) {
+  for (Index i = 0; i < numVertices_; ++i) {
     RemoveNode(list_[i]);
   }
   delete [] list_;
   numVertices_ = adjacencyList.numVertices_;
   numEdges_ = adjacencyList.numEdges_;
   list_ = new ListNode * [numVertices_];
-  for (T_Index i = 0; i < numVertices_; ++i) {
+  for (Index i = 0; i < numVertices_; ++i) {
     list_[i] = CopyNode(list_[i], adjacencyList.list_[i]);
   }
-  graph_ = adjacencyList.graph_;
 }
 
-template <typename T_Index, typename T_Scalar>
-typename AdjacencyList<T_Index, T_Scalar>::ListNode * AdjacencyList<T_Index, T_Scalar>::CopyNode(AdjacencyList<T_Index, T_Scalar>::ListNode *dest, AdjacencyList<T_Index, T_Scalar>::ListNode *src) {
+typename AdjacencyList::ListNode * AdjacencyList::CopyNode(AdjacencyList::ListNode *dest, AdjacencyList::ListNode *src) {
   if (src == NULL) return NULL;
   dest = new ListNode(src->idx, src->weight);
   dest->next = CopyNode(dest->next, src->next);
   return dest;
 }
 
-template <typename T_Index, typename T_Scalar>
-AdjacencyList<T_Index, T_Scalar>::AdjacencyList(const AdjacencyList &other) {
+AdjacencyList::AdjacencyList(const AdjacencyList &other) {
   CopyFrom(other);
 }
 
-template <typename T_Index, typename T_Scalar>
-const AdjacencyList<T_Index, T_Scalar> &AdjacencyList<T_Index, T_Scalar>::operator=(const AdjacencyList<T_Index, T_Scalar> &other) {
+const AdjacencyList &AdjacencyList::operator=(const AdjacencyList &other) {
   CopyFrom(other);
   return *this;
 }
 
 
 // explicit instantiations
-template class AdjacencyList<size_t, float>;
-template class AdjacencyList<size_t, double>;
-template class AdjacencyList<int, float>;
-template class AdjacencyList<int, double>;
+template struct GraphArray<size_t, float>;
+template struct GraphArray<size_t, double>;
+template struct GraphArray<int, float>;
+template struct GraphArray<int, double>;
+template std::shared_ptr<GraphArray<size_t, float>> AdjacencyList::GetGraphArray<size_t, float>() const;
+template std::shared_ptr<GraphArray<size_t, double>> AdjacencyList::GetGraphArray<size_t, double>() const;
+template std::shared_ptr<GraphArray<int, float>> AdjacencyList::GetGraphArray<int, float>() const;
+template std::shared_ptr<GraphArray<int, double>> AdjacencyList::GetGraphArray<int, double>() const;
 
 } // namespace UndirectedWeightedGraph
