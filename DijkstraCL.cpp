@@ -8,6 +8,9 @@
 
 namespace Dijkstra {
 
+//! checkError macro to incorporate the line of code with error for convenient debugging.
+#define checkError() checkErrorFileLine(__FILE__ , __LINE__)
+
 const char *programSource = R"(
 __kernel void OCL_SSSP_KERNEL1(__global int *vertices, __global int *edges, __global float *weights,
                                __global int *masks, __global float *costs, __global float *updatingCosts,

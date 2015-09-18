@@ -31,8 +31,6 @@
 #include "AdjacencyList.h"
 #include "Matrix.h"
 
-//! checkError macro to incorporate the line of code with error for convenient debugging.
-#define checkError() checkErrorFileLine(__FILE__ , __LINE__)
 
 namespace Dijkstra {
 
