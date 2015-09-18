@@ -66,7 +66,7 @@ __kernel void initializeBuffers(__global int *masks, __global float *costs, __gl
 }
 )";
 
-DijkstraCL::DijkstraCL(std::shared_ptr<UndirectedWeightedGraph::GraphArray<cl_Index, cl_Scalar>> graph)
+DijkstraCL::DijkstraCL(std::shared_ptr<GraphUtils::GraphArray<cl_Index, cl_Scalar>> graph)
     : graph_(graph),
       numVertices_(graph->vertices.size()),
       sourceVertices_(graph->vertices.size(), 0),
@@ -302,7 +302,7 @@ DijkstraCL::cl_Index DijkstraCL::RoundUpWorkSize(cl_Index groupSize, cl_Index gl
 
 void DijkstraCL::PrepareDeviceMemory(cl_context context,
                                      cl_command_queue commandQueue,
-                                     UndirectedWeightedGraph::GraphArray<cl_Index, cl_Scalar> &graph,
+                                     GraphUtils::GraphArray<cl_Index, cl_Scalar> &graph,
                                      cl_mem *verticesDevice,
                                      cl_mem *edgesDevice,
                                      cl_mem *weightsDevice,

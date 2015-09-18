@@ -44,7 +44,7 @@ class DijkstraCL {
   //! Constructor.
   //! Create the shortest path problem from a predefined GraphArray shared pointer.
   //! The size type and value type of the GraphArray must be compatible with cl_Index and cl_Scalar.
-  DijkstraCL(std::shared_ptr<UndirectedWeightedGraph::GraphArray<cl_Index, cl_Scalar>> graph);
+  DijkstraCL(std::shared_ptr<GraphUtils::GraphArray<cl_Index, cl_Scalar>> graph);
 
   //! Run the parallel shortest distance calculation with default or predefined parameters.
   //! The default behavior is to calculate all-pair shortest distance matrix using one GPU with the
@@ -55,7 +55,7 @@ class DijkstraCL {
   //! The result is a row-major linear storage of the distance matrix.
   std::shared_ptr<std::vector<cl_Scalar>> GetResultsArray();
  private:
-  std::shared_ptr<UndirectedWeightedGraph::GraphArray<cl_Index, cl_Scalar>> graph_; //!< Predefined GraphArray shared pointer.
+  std::shared_ptr<GraphUtils::GraphArray<cl_Index, cl_Scalar>> graph_; //!< Predefined GraphArray shared pointer.
   cl_Index numVertices_; //!< number of vertices of the graph, calculated from graph_.
   std::vector<cl_Index> sourceVertices_; //!< the source vertices list from which the shortest distances to all vertices are calculated.
   std::shared_ptr<std::vector<cl_Scalar>> results_; //!< the result array pointer.
@@ -96,7 +96,7 @@ class DijkstraCL {
   //! \param updatingCostDevice the pointer to where a device memory reference for updating cost array is created.
   //! \param globalWorkSize rounded-up global work size.
   void PrepareDeviceMemory
-      (cl_context context, cl_command_queue commandQueue, UndirectedWeightedGraph::GraphArray<cl_Index, cl_Scalar> &graph,
+      (cl_context context, cl_command_queue commandQueue, GraphUtils::GraphArray<cl_Index, cl_Scalar> &graph,
        cl_mem *verticesDevice, cl_mem *edgesDevice, cl_mem *weightsDevice,
        cl_mem *maskDevice, cl_mem *costDevice, cl_mem *updatingCostDevice,
        size_t globalWorkSize);

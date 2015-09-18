@@ -4,7 +4,7 @@
 
 #include "AdjacencyList.h"
 
-namespace UndirectedWeightedGraph {
+namespace GraphUtils {
 
 AdjacencyList::AdjacencyList(Index numVertices) : numVertices_(numVertices), numEdges_(0) {
   list_ = new ListNode * [numVertices];
@@ -128,4 +128,4 @@ template std::shared_ptr<GraphArray<size_t, double>> AdjacencyList::GetGraphArra
 template std::shared_ptr<GraphArray<int, float>> AdjacencyList::GetGraphArray<int, float>() const;
 template std::shared_ptr<GraphArray<int, double>> AdjacencyList::GetGraphArray<int, double>() const;
 
-} // namespace UndirectedWeightedGraph
+} // namespace GraphUtils

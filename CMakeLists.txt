@@ -7,7 +7,10 @@ find_package(OpenCL REQUIRED)
 include_directories(${OpenCL_INCLUDE_DIR})
 find_package(GSL REQUIRED)
 include_directories(${GSL_INCLUDE_DIR})
+find_package(Boost REQUIRED)
+include_directories(${Boost_INCLUDE_DIR})
 
-set(SOURCE_FILES main.cpp Matrix.cpp Matrix.h UndirectedWeightedGraph.h AdjacencyList.cpp AdjacencyList.h DijkstraCL.cpp DijkstraCL.h typedefs.h)
+
+set(SOURCE_FILES main.cpp Matrix.cpp Matrix.h UndirectedWeightedGraph.h AdjacencyList.cpp AdjacencyList.h DijkstraCL.cpp DijkstraCL.h typedefs.h BoostAdjacencyList.cpp BoostAdjacencyList.h BoostDijkstra.cpp BoostDijkstra.h)
 add_executable(DijkstraCL ${SOURCE_FILES})
 target_link_libraries(DijkstraCL ${OpenCL_LIBRARY} ${GSL_LIBRARY})

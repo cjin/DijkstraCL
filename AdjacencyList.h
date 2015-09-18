@@ -17,7 +17,7 @@
 #include <vector>
 #include "UndirectedWeightedGraph.h"
 
-namespace UndirectedWeightedGraph {
+namespace GraphUtils {
 
 template <typename T_Index, typename T_Scalar>
 struct GraphArray {
@@ -59,6 +59,6 @@ class AdjacencyList : public UndirectedWeightedGraph {
   ListNode * CopyNode(ListNode *dest, ListNode *src);
 };
 
-} // namespace UndirectedWeightedGraph
+} // namespace GraphUtils
 
 #endif //DIJKSTRACL_UWGADJACENCYLIST_H

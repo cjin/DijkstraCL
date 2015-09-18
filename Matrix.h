@@ -123,6 +123,8 @@ class Matrix {
   bool operator==(const Matrix& other) const;
 };
 
+std::ostream& operator<<(std::ostream& os, const Matrix& matrix);
+
 } // namespace gsl
 
 #endif //DIJKSTRACL_MATRIX_H

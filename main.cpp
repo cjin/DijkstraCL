@@ -1,18 +1,22 @@
 #include <iostream>
 #include "AdjacencyList.h"
 #include "DijkstraCL.h"
+#include "BoostAdjacencyList.h"
+#include "BoostDijkstra.h"
 
 using namespace std;
+using namespace GraphUtils;
+using namespace Dijkstra;
 
-void GenerateRandomGraph(std::shared_ptr<UndirectedWeightedGraph::UndirectedWeightedGraph> graph);
+void GenerateExampleGraph(std::shared_ptr<UndirectedWeightedGraph> graph);
 
 int main() {
 
-  auto adjList = make_shared<UndirectedWeightedGraph::AdjacencyList>(10);
-  std::shared_ptr<UndirectedWeightedGraph::UndirectedWeightedGraph> graph(adjList);
-  GenerateRandomGraph(graph);
+  auto adjList = make_shared<AdjacencyList>(10);
+//  std::shared_ptr<GraphUtils::GraphUtils> graph(adjList);
+  GenerateExampleGraph(adjList);
 
-  auto g = adjList->GetGraphArray<Dijkstra::DijkstraCL::cl_Index, Dijkstra::DijkstraCL::cl_Scalar>();
+  auto g = adjList->GetGraphArray<DijkstraCL::cl_Index, DijkstraCL::cl_Scalar>();
   for (auto c : g->vertices) cout << " " << c;
   cout << endl;
   for (auto c : g->edges) cout << " " << c;
@@ -20,12 +24,12 @@ int main() {
   for (auto c : g->weights) cout << " " << c;
   cout << endl;
 
-  Dijkstra::DijkstraCL dijkstraCL(g);
+  DijkstraCL dijkstraCL(g);
   cout << dijkstraCL.Run() << endl;
   int count = 0;
   for (auto v : *dijkstraCL.GetResultsArray()) {
-    if (v == numeric_limits<Dijkstra::DijkstraCL::cl_Scalar>::max()) {
-      cout << "X ";
+    if (v == numeric_limits<DijkstraCL::cl_Scalar>::max()) {
+      cout << "- ";
     } else {
       cout << v << " ";
     }
@@ -35,13 +39,20 @@ int main() {
       cout << endl;
     }
   }
-
+  cout << endl;
+  auto boostAdjList = make_shared<BoostAdjacencyList>(10);
+  GenerateExampleGraph(boostAdjList);
+  BoostDijkstra boostDijkstra(boostAdjList->GetBoostGraph());
+  boostDijkstra.Run();
+  auto boostResultMat = boostDijkstra.GetDistanceMatrix();
+  cout << *boostResultMat;
   return 0;
 }
 
-void GenerateRandomGraph(std::shared_ptr<UndirectedWeightedGraph::UndirectedWeightedGraph> graph) {
+void GenerateExampleGraph(std::shared_ptr<UndirectedWeightedGraph> graph) {
   graph->Connect(0, 2, 1);
-  graph->Connect(2, 3, 1);
-  graph->Connect(2, 5, 1);
-  graph->Connect(4, 8, 1);
+  graph->Connect(2, 3, 2);
+  graph->Connect(2, 5, 3);
+  graph->Connect(4, 8, 4);
+  graph->Connect(5, 9, 1);
 }

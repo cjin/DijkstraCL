@@ -8,7 +8,7 @@
 #include <stddef.h>
 #include "typedefs.h"
 
-namespace UndirectedWeightedGraph {
+namespace GraphUtils {
 
 class UndirectedWeightedGraph {
  public:

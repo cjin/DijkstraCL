@@ -116,7 +116,7 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a568bd4b94630d1add7a753b827b518e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#a568bd4b94630d1add7a753b827b518e1">DijkstraCL</a> (std::shared_ptr&lt; <a class="el" href="struct_undirected_weighted_graph_1_1_graph_array.html">UndirectedWeightedGraph::GraphArray</a>&lt; <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#aab92585b062690f0835f154dc28f8c04">cl_Index</a>, <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#a5dc96724577a49ee14d4c2e1df3c0579">cl_Scalar</a> &gt;&gt; graph)</td></tr>
+<tr class="memitem:a568bd4b94630d1add7a753b827b518e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#a568bd4b94630d1add7a753b827b518e1">DijkstraCL</a> (std::shared_ptr&lt; <a class="el" href="struct_undirected_weighted_graph_1_1_graph_array.html">GraphUtils::GraphArray</a>&lt; <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#aab92585b062690f0835f154dc28f8c04">cl_Index</a>, <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#a5dc96724577a49ee14d4c2e1df3c0579">cl_Scalar</a> &gt;&gt; graph)</td></tr>
 <tr class="separator:a568bd4b94630d1add7a753b827b518e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adaceb81f91f37f7533c8e64446a4845b"><td class="memItemLeft" align="right" valign="top">cl_int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#adaceb81f91f37f7533c8e64446a4845b">Run</a> ()</td></tr>
 <tr class="separator:adaceb81f91f37f7533c8e64446a4845b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,7 +136,7 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:afdc37522923aee23fe315bcf8d992275"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d58915ccd8fa4967947598a4a588d40"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#a2d58915ccd8fa4967947598a4a588d40">isMaskEmpty</a> (<a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#aab92585b062690f0835f154dc28f8c04">cl_Index</a> *mask, <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#aab92585b062690f0835f154dc28f8c04">cl_Index</a> maskSize)</td></tr>
 <tr class="separator:a2d58915ccd8fa4967947598a4a588d40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd0c8413f67d7bc40994585c59534400"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#acd0c8413f67d7bc40994585c59534400">PrepareDeviceMemory</a> (cl_context context, cl_command_queue commandQueue, <a class="el" href="struct_undirected_weighted_graph_1_1_graph_array.html">UndirectedWeightedGraph::GraphArray</a>&lt; <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#aab92585b062690f0835f154dc28f8c04">cl_Index</a>, <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#a5dc96724577a49ee14d4c2e1df3c0579">cl_Scalar</a> &gt; &amp;graph, cl_mem *verticesDevice, cl_mem *edgesDevice, cl_mem *weightsDevice, cl_mem *maskDevice, cl_mem *costDevice, cl_mem *updatingCostDevice, size_t globalWorkSize)</td></tr>
+<tr class="memitem:acd0c8413f67d7bc40994585c59534400"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#acd0c8413f67d7bc40994585c59534400">PrepareDeviceMemory</a> (cl_context context, cl_command_queue commandQueue, <a class="el" href="struct_undirected_weighted_graph_1_1_graph_array.html">GraphUtils::GraphArray</a>&lt; <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#aab92585b062690f0835f154dc28f8c04">cl_Index</a>, <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#a5dc96724577a49ee14d4c2e1df3c0579">cl_Scalar</a> &gt; &amp;graph, cl_mem *verticesDevice, cl_mem *edgesDevice, cl_mem *weightsDevice, cl_mem *maskDevice, cl_mem *costDevice, cl_mem *updatingCostDevice, size_t globalWorkSize)</td></tr>
 <tr class="separator:acd0c8413f67d7bc40994585c59534400"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fb0b75503b75bb345ed69f3eb67db0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#a8fb0b75503b75bb345ed69f3eb67db0c">checkErrorFileLine</a> (const char *file, const int lineNumber)</td></tr>
 <tr class="separator:a8fb0b75503b75bb345ed69f3eb67db0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,7 +148,7 @@ Private Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a0b851e99d9aed1cc0671fc537efe3a20"><td class="memItemLeft" align="right" valign="top">std::shared_ptr<br class="typebreak" />
-&lt; <a class="el" href="struct_undirected_weighted_graph_1_1_graph_array.html">UndirectedWeightedGraph::GraphArray</a><br class="typebreak" />
+&lt; <a class="el" href="struct_undirected_weighted_graph_1_1_graph_array.html">GraphUtils::GraphArray</a><br class="typebreak" />
 &lt; <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#aab92585b062690f0835f154dc28f8c04">cl_Index</a>, <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#a5dc96724577a49ee14d4c2e1df3c0579">cl_Scalar</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#a0b851e99d9aed1cc0671fc537efe3a20">graph_</a></td></tr>
 <tr class="memdesc:a0b851e99d9aed1cc0671fc537efe3a20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predefined GraphArray shared pointer.  <a href="#a0b851e99d9aed1cc0671fc537efe3a20">More...</a><br /></td></tr>
 <tr class="separator:a0b851e99d9aed1cc0671fc537efe3a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -214,7 +214,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">Dijkstra::DijkstraCL::DijkstraCL </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="struct_undirected_weighted_graph_1_1_graph_array.html">UndirectedWeightedGraph::GraphArray</a>&lt; <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#aab92585b062690f0835f154dc28f8c04">cl_Index</a>, <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#a5dc96724577a49ee14d4c2e1df3c0579">cl_Scalar</a> &gt;&gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="struct_undirected_weighted_graph_1_1_graph_array.html">GraphUtils::GraphArray</a>&lt; <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#aab92585b062690f0835f154dc28f8c04">cl_Index</a>, <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#a5dc96724577a49ee14d4c2e1df3c0579">cl_Scalar</a> &gt;&gt;&#160;</td>
           <td class="paramname"><em>graph</em></td><td>)</td>
           <td></td>
         </tr>
@@ -419,7 +419,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_undirected_weighted_graph_1_1_graph_array.html">UndirectedWeightedGraph::GraphArray</a>&lt; <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#aab92585b062690f0835f154dc28f8c04">cl_Index</a>, <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#a5dc96724577a49ee14d4c2e1df3c0579">cl_Scalar</a> &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_undirected_weighted_graph_1_1_graph_array.html">GraphUtils::GraphArray</a>&lt; <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#aab92585b062690f0835f154dc28f8c04">cl_Index</a>, <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#a5dc96724577a49ee14d4c2e1df3c0579">cl_Scalar</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>graph</em>, </td>
         </tr>
         <tr>
@@ -645,7 +645,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="struct_undirected_weighted_graph_1_1_graph_array.html">UndirectedWeightedGraph::GraphArray</a>&lt;<a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#aab92585b062690f0835f154dc28f8c04">cl_Index</a>, <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#a5dc96724577a49ee14d4c2e1df3c0579">cl_Scalar</a>&gt; &gt; Dijkstra::DijkstraCL::graph_</td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="struct_undirected_weighted_graph_1_1_graph_array.html">GraphUtils::GraphArray</a>&lt;<a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#aab92585b062690f0835f154dc28f8c04">cl_Index</a>, <a class="el" href="class_dijkstra_1_1_dijkstra_c_l.html#a5dc96724577a49ee14d4c2e1df3c0579">cl_Scalar</a>&gt; &gt; Dijkstra::DijkstraCL::graph_</td>
         </tr>
       </table>
   </td>

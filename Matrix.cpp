@@ -1,5 +1,6 @@
 
 #include <algorithm>
+#include <iostream>
 #include "Matrix.h"
 
 namespace gsl {
@@ -117,4 +118,18 @@ bool Matrix::operator==(const Matrix &other) const {
   return true;
 }
 
+std::ostream &operator<<(std::ostream &os, const Matrix &matrix) {
+  for (Index r = 0; r < matrix.m_->size1; ++r) {
+    for (Index c = 0; c < matrix.m_->size2; ++c) {
+      double val = gsl_matrix_get(matrix.m_, r, c);
+      if (val == std::numeric_limits<Scalar>::max()) {
+        os << "- ";
+      } else {
+        os << val << " ";
+      }
+    }
+    os << std::endl;
+  }
+  return os;
+}
 } // namespace gsl
