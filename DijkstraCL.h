@@ -54,6 +54,9 @@ class DijkstraCL {
   //! Get the result array pointer.
   //! The result is a row-major linear storage of the distance matrix.
   std::shared_ptr<std::vector<cl_Scalar>> GetResultsArray();
+
+  //! Get the result as a gsl::Matrix
+  std::shared_ptr<gsl::Matrix> GetDistanceMatrix();
  private:
   std::shared_ptr<GraphUtils::GraphArray<cl_Index, cl_Scalar>> graph_; //!< Predefined GraphArray shared pointer.
   cl_Index numVertices_; //!< number of vertices of the graph, calculated from graph_.

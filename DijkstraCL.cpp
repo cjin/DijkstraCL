@@ -364,4 +364,21 @@ bool DijkstraCL::isMaskEmpty(DijkstraCL::cl_Index *mask, DijkstraCL::cl_Index ma
   return true;
 }
 
+std::shared_ptr<gsl::Matrix> DijkstraCL::GetDistanceMatrix() {
+  std::shared_ptr<gsl::Matrix> result(new gsl::Matrix(sourceVertices_.size(), static_cast<Index>(numVertices_)));
+  for (Index r = 0; r < sourceVertices_.size(); ++r) {
+    for (Index c = 0; c < numVertices_; ++c) {
+      Scalar val = static_cast<Scalar>((*results_)[r * numVertices_ + c]);
+      // Note that the float max value is directly converted to double max value for convenience.
+      // This is assuming the client code is aware of possible imprecision:
+      // e.g., if client code use double as Scalar, and OpenCL device only supports float as cl_Scalar,
+      // then cl_Scalar overflow doesn't mean a Scalar overflow.
+      // However, this is ok for almost all applications since the "overflow" here just means no connection.
+      if (val == std::numeric_limits<cl_Scalar>::max()) val = std::numeric_limits<Scalar>::max();
+      (*result)(r, c) = val;
+    }
+  }
+  return result;
+}
+
 }
